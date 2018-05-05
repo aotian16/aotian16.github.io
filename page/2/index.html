@@ -1,0 +1,2094 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  
+  <title>启飞</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+  <meta name="description" content="一个简单的博客">
+<meta property="og:type" content="website">
+<meta property="og:title" content="启飞">
+<meta property="og:url" content="http://qefee.com/page/2/index.html">
+<meta property="og:site_name" content="启飞">
+<meta property="og:description" content="一个简单的博客">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="启飞">
+<meta name="twitter:description" content="一个简单的博客">
+  
+    <link rel="alternative" href="/atom.xml" title="启飞" type="application/atom+xml">
+  
+  
+    <link rel="icon" href="/favicon.png">
+  
+  <link href="//fonts.googleapis.com/css?family=Source+Code+Pro" rel="stylesheet" type="text/css">
+  <link rel="stylesheet" href="/css/style.css">
+  
+<!-- Google Analytics -->
+<script type="text/javascript">
+(function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+(i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+})(window,document,'script','//www.google-analytics.com/analytics.js','ga');
+
+ga('create', 'UA-47713171-1', 'auto');
+ga('send', 'pageview');
+
+</script>
+<!-- End Google Analytics -->
+
+
+</head>
+
+<body>
+  <div id="container">
+    <div id="wrap">
+      <header id="header">
+  <div id="banner"></div>
+  <div id="header-outer" class="outer">
+    <div id="header-title" class="inner">
+      <h1 id="logo-wrap">
+        <a href="/" id="logo">启飞</a>
+      </h1>
+      
+        <h2 id="subtitle-wrap">
+          <a href="/" id="subtitle">自己自在</a>
+        </h2>
+      
+    </div>
+    <div id="header-inner" class="inner">
+      <nav id="main-nav">
+        <a id="main-nav-toggle" class="nav-icon"></a>
+        
+          <a class="main-nav-link" href="/">Home</a>
+        
+          <a class="main-nav-link" href="/archives">Archives</a>
+        
+          <a class="main-nav-link" href="/about">About</a>
+        
+      </nav>
+      <nav id="sub-nav">
+        
+          <a id="nav-rss-link" class="nav-icon" href="/atom.xml" title="RSS Feed"></a>
+        
+        <a id="nav-search-btn" class="nav-icon" title="Search"></a>
+      </nav>
+      <div id="search-form-wrap">
+        <form action="//google.com/search" method="get" accept-charset="UTF-8" class="search-form"><input type="search" name="q" results="0" class="search-form-input" placeholder="Search"><button type="submit" class="search-form-submit">&#xF002;</button><input type="hidden" name="sitesearch" value="http://qefee.com"></form>
+      </div>
+    </div>
+  </div>
+</header>
+      <div class="outer">
+        <section id="main">
+  
+    <article id="post-swift简单动画demo" class="article article-type-post" itemscope itemprop="blogPost">
+  <div class="article-meta">
+    <a href="/2016/05/15/swift简单动画demo/" class="article-date">
+  <time datetime="2016-05-15T15:06:06.000Z" itemprop="datePublished">2016-05-15</time>
+</a>
+    
+  <div class="article-category">
+    <a class="article-category-link" href="/categories/swift/">swift</a>
+  </div>
+
+  </div>
+  <div class="article-inner">
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2016/05/15/swift简单动画demo/">swift简单动画demo</a>
+    </h1>
+  
+
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <p><strong>from:</strong><br><a href="http://qefee.com/2016/05/15/swift%E7%AE%80%E5%8D%95%E5%8A%A8%E7%94%BBdemo/">swift简单动画demo</a></p>
+<!--head-->
+<h1 id="动画GIF"><a href="#动画GIF" class="headerlink" title="动画GIF"></a>动画GIF</h1><table>
+<thead>
+<tr>
+<th style="text-align:center">No.</th>
+<th>name(cn)</th>
+<th>name(en)</th>
+<th style="text-align:center">gif</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align:center">1</td>
+<td>缩放动画</td>
+<td>Scale</td>
+<td style="text-align:center"><img src="https://github.com/aotian16/Blog/blob/master/Study/Dev/Swift/swift%E7%AE%80%E5%8D%95%E5%8A%A8%E7%94%BBdemo/animScale.gif?raw=true" alt="scale"></td>
+</tr>
+<tr>
+<td style="text-align:center">2</td>
+<td>位移动画</td>
+<td>Translation</td>
+<td style="text-align:center"><img src="https://github.com/aotian16/Blog/blob/master/Study/Dev/Swift/swift%E7%AE%80%E5%8D%95%E5%8A%A8%E7%94%BBdemo/animTranslation.gif?raw=true" alt="scale"></td>
+</tr>
+<tr>
+<td style="text-align:center">3</td>
+<td>旋转动画</td>
+<td>Rotation</td>
+<td style="text-align:center"><img src="https://github.com/aotian16/Blog/blob/master/Study/Dev/Swift/swift%E7%AE%80%E5%8D%95%E5%8A%A8%E7%94%BBdemo/animRotation.gif?raw=true" alt="scale"></td>
+</tr>
+<tr>
+<td style="text-align:center">4</td>
+<td>颜色动画</td>
+<td>Color</td>
+<td style="text-align:center"><img src="https://github.com/aotian16/Blog/blob/master/Study/Dev/Swift/swift%E7%AE%80%E5%8D%95%E5%8A%A8%E7%94%BBdemo/animColor.gif?raw=true" alt="scale"></td>
+</tr>
+<tr>
+<td style="text-align:center">5</td>
+<td>弹簧动画</td>
+<td>Spring</td>
+<td style="text-align:center"><img src="https://github.com/aotian16/Blog/blob/master/Study/Dev/Swift/swift%E7%AE%80%E5%8D%95%E5%8A%A8%E7%94%BBdemo/animSpring.gif?raw=true" alt="scale"></td>
+</tr>
+<tr>
+<td style="text-align:center">6</td>
+<td>组合动画</td>
+<td>Concat</td>
+<td style="text-align:center"><img src="https://github.com/aotian16/Blog/blob/master/Study/Dev/Swift/swift%E7%AE%80%E5%8D%95%E5%8A%A8%E7%94%BBdemo/animConcat.gif?raw=true" alt="scale"></td>
+</tr>
+</tbody>
+</table>
+        
+          <p class="article-more-link">
+            <a href="/2016/05/15/swift简单动画demo/#more">Read More</a>
+          </p>
+        
+      
+    </div>
+    <footer class="article-footer">
+      <a data-url="http://qefee.com/2016/05/15/swift简单动画demo/" data-id="cjgt1z15o00bcsxc93gqnb4dj" class="article-share-link">Share</a>
+      
+        <a href="http://qefee.com/2016/05/15/swift简单动画demo/#disqus_thread" class="article-comment-link">Comments</a>
+      
+      
+  <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/动画/">动画</a></li></ul>
+
+    </footer>
+  </div>
+  
+</article>
+
+
+  
+    <article id="post-Swift关闭键盘的两种方式" class="article article-type-post" itemscope itemprop="blogPost">
+  <div class="article-meta">
+    <a href="/2016/05/13/Swift关闭键盘的两种方式/" class="article-date">
+  <time datetime="2016-05-13T07:45:48.000Z" itemprop="datePublished">2016-05-13</time>
+</a>
+    
+  <div class="article-category">
+    <a class="article-category-link" href="/categories/swift/">swift</a>
+  </div>
+
+  </div>
+  <div class="article-inner">
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2016/05/13/Swift关闭键盘的两种方式/">Swift关闭键盘的两种方式</a>
+    </h1>
+  
+
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <!--head-->
+<p>学习中，记录下。</p>
+<p><strong>from</strong> <a href="http://qefee.com/2016/05/13/Swift%E5%85%B3%E9%97%AD%E9%94%AE%E7%9B%98%E7%9A%84%E4%B8%A4%E7%A7%8D%E6%96%B9%E5%BC%8F/">Swift关闭键盘的两种方式</a></p>
+<h3 id="方法一"><a href="#方法一" class="headerlink" title="方法一"></a>方法一</h3><p>对单个的<code>UITextField</code>调用<code>resignFirstResponder</code>方法， 使其失去第一响应者</p>
+<figure class="highlight swift"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">sender.resignFirstResponder()</span><br></pre></td></tr></table></figure>
+<h3 id="方法二"><a href="#方法二" class="headerlink" title="方法二"></a>方法二</h3><p>对<code>UIViewController</code>，重写<code>touchesBegan</code>， 并调用<code>endEditing</code>方法</p>
+<figure class="highlight swift"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">override</span> <span class="function"><span class="keyword">func</span> <span class="title">touchesBegan</span><span class="params">(touches: Set&lt;UITouch&gt;, withEvent event: UIEvent?)</span></span> &#123;</span><br><span class="line">        view.endEditing(<span class="literal">true</span>)</span><br><span class="line">    &#125;</span><br></pre></td></tr></table></figure>
+<h3 id="参考"><a href="#参考" class="headerlink" title="参考"></a>参考</h3><ul>
+<li><a href="http://stackoverflow.com/questions/24126678/close-ios-keyboard-by-touching-anywhere-using-swift">Close iOS Keyboard by touching anywhere using Swift</a></li>
+</ul>
+        
+          <p class="article-more-link">
+            <a href="/2016/05/13/Swift关闭键盘的两种方式/#more">Read More</a>
+          </p>
+        
+      
+    </div>
+    <footer class="article-footer">
+      <a data-url="http://qefee.com/2016/05/13/Swift关闭键盘的两种方式/" data-id="cjgt1z0z6000qsxc9glcb6h3c" class="article-share-link">Share</a>
+      
+        <a href="http://qefee.com/2016/05/13/Swift关闭键盘的两种方式/#disqus_thread" class="article-comment-link">Comments</a>
+      
+      
+  <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/swift/">swift</a></li></ul>
+
+    </footer>
+  </div>
+  
+</article>
+
+
+  
+    <article id="post-Swift设计模式整理" class="article article-type-post" itemscope itemprop="blogPost">
+  <div class="article-meta">
+    <a href="/2016/05/12/Swift设计模式整理/" class="article-date">
+  <time datetime="2016-05-12T05:13:49.000Z" itemprop="datePublished">2016-05-12</time>
+</a>
+    
+  <div class="article-category">
+    <a class="article-category-link" href="/categories/ios/">ios</a>
+  </div>
+
+  </div>
+  <div class="article-inner">
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2016/05/12/Swift设计模式整理/">Swift设计模式整理</a>
+    </h1>
+  
+
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <!--head-->
+<p>[TOC]</p>
+<h1 id="定位"><a href="#定位" class="headerlink" title="定位"></a>定位</h1><p>swift设计模式的入门读物。各个模式详细介绍请自行搜索网文，博客，也可以查看下面的参考文章。</p>
+<h1 id="使用方法"><a href="#使用方法" class="headerlink" title="使用方法"></a>使用方法</h1><ol>
+<li>读懂代码</li>
+<li>在网上查找各种对应设计模式的含义</li>
+<li>再次回来读代码并联系含义</li>
+</ol>
+<h1 id="分类"><a href="#分类" class="headerlink" title="分类"></a>分类</h1><table>
+<thead>
+<tr>
+<th style="text-align:center">No.</th>
+<th>name(cn)</th>
+<th>name(en)</th>
+<th style="text-align:center">type</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align:center">1</td>
+<td><a href="http://qefee.com/2016/05/12/Swift%E8%AE%BE%E8%AE%A1%E6%A8%A1%E5%BC%8F%E4%B9%8B%E4%BF%9D%E6%8A%A4%E4%BB%A3%E7%90%86%E6%A8%A1%E5%BC%8F/">代理模式</a></td>
+<td>Proxy</td>
+<td style="text-align:center">结构型</td>
+</tr>
+<tr>
+<td style="text-align:center">2</td>
+<td><a href="http://qefee.com/2016/05/12/Swift%E8%AE%BE%E8%AE%A1%E6%A8%A1%E5%BC%8F%E4%B9%8B%E5%A4%96%E8%A7%82%E6%A8%A1%E5%BC%8F/">外观模式</a></td>
+<td>Facade</td>
+<td style="text-align:center"></td>
+</tr>
+<tr>
+<td style="text-align:center">3</td>
+<td><a href="http://qefee.com/2016/05/12/Swift%E8%AE%BE%E8%AE%A1%E6%A8%A1%E5%BC%8F%E4%B9%8B%E8%A3%85%E9%A5%B0%E6%A8%A1%E5%BC%8F/">装饰模式</a></td>
+<td>Decorator</td>
+<td style="text-align:center"></td>
+</tr>
+<tr>
+<td style="text-align:center">4</td>
+<td><a href="http://qefee.com/2016/05/12/Swift%E8%AE%BE%E8%AE%A1%E6%A8%A1%E5%BC%8F%E4%B9%8B%E7%BB%84%E5%90%88%E6%A8%A1%E5%BC%8F/">组合模式</a></td>
+<td>Composite</td>
+<td style="text-align:center"></td>
+</tr>
+<tr>
+<td style="text-align:center">5</td>
+<td><a href="http://qefee.com/2016/05/11/Swift%E8%AE%BE%E8%AE%A1%E6%A8%A1%E5%BC%8F%E4%B9%8B%E6%A1%A5%E6%A2%81%E6%A8%A1%E5%BC%8F/">桥梁模式</a></td>
+<td>Bridge</td>
+<td style="text-align:center"></td>
+</tr>
+<tr>
+<td style="text-align:center">6</td>
+<td><a href="http://qefee.com/2016/05/11/Swift%E8%AE%BE%E8%AE%A1%E6%A8%A1%E5%BC%8F%E4%B9%8B%E9%80%82%E9%85%8D%E5%99%A8%E6%A8%A1%E5%BC%8F/">适配器模式</a></td>
+<td>Adapter</td>
+<td style="text-align:center"></td>
+</tr>
+<tr>
+<td style="text-align:center">7</td>
+<td><a href="http://qefee.com/2016/05/11/Swift%E8%AE%BE%E8%AE%A1%E6%A8%A1%E5%BC%8F%E4%B9%8B%E5%8D%95%E4%BE%8B%E6%A8%A1%E5%BC%8F/">单例模式</a></td>
+<td>Singleton</td>
+<td style="text-align:center">创建型</td>
+</tr>
+<tr>
+<td style="text-align:center">8</td>
+<td><a href="http://qefee.com/2016/05/11/Swift%E8%AE%BE%E8%AE%A1%E6%A8%A1%E5%BC%8F%E4%B9%8B%E5%8E%9F%E5%9E%8B%E6%A8%A1%E5%BC%8F/">原型模式</a></td>
+<td>Prototype</td>
+<td style="text-align:center"></td>
+</tr>
+<tr>
+<td style="text-align:center">9</td>
+<td><a href="http://qefee.com/2016/05/11/Swift%E8%AE%BE%E8%AE%A1%E6%A8%A1%E5%BC%8F%E4%B9%8B%E5%B7%A5%E5%8E%82%E6%96%B9%E6%B3%95%E6%A8%A1%E5%BC%8F/">工厂方法模式</a></td>
+<td>Factory Method</td>
+<td style="text-align:center"></td>
+</tr>
+<tr>
+<td style="text-align:center">10</td>
+<td><a href="http://qefee.com/2016/05/11/Swift%E8%AE%BE%E8%AE%A1%E6%A8%A1%E5%BC%8F%E4%B9%8B%E5%88%9B%E5%BB%BA%E8%80%85%E6%A8%A1%E5%BC%8F/">创建者模式</a></td>
+<td>Builder</td>
+<td style="text-align:center"></td>
+</tr>
+<tr>
+<td style="text-align:center">11</td>
+<td><a href="http://qefee.com/2016/05/10/Swift%E8%AE%BE%E8%AE%A1%E6%A8%A1%E5%BC%8F%E4%B9%8B%E6%8A%BD%E8%B1%A1%E5%B7%A5%E5%8E%82%E6%A8%A1%E5%BC%8F/">抽象工厂模式</a></td>
+<td>Abstract Factory</td>
+<td style="text-align:center"></td>
+</tr>
+<tr>
+<td style="text-align:center">12</td>
+<td><a href="http://qefee.com/2016/05/10/Swift%E8%AE%BE%E8%AE%A1%E6%A8%A1%E5%BC%8F%E4%B9%8B%E8%AE%BF%E9%97%AE%E8%80%85%E6%A8%A1%E5%BC%8F/">访问者模式</a></td>
+<td>Visitor</td>
+<td style="text-align:center">行为型</td>
+</tr>
+<tr>
+<td style="text-align:center">13</td>
+<td><a href="http://qefee.com/2016/05/10/Swift%E8%AE%BE%E8%AE%A1%E6%A8%A1%E5%BC%8F%E4%B9%8B%E7%AD%96%E7%95%A5%E6%A8%A1%E5%BC%8F/">策略模式</a></td>
+<td>Strategy</td>
+<td style="text-align:center"></td>
+</tr>
+<tr>
+<td style="text-align:center">14</td>
+<td><a href="http://qefee.com/2016/05/10/Swift%E8%AE%BE%E8%AE%A1%E6%A8%A1%E5%BC%8F%E4%B9%8B%E7%8A%B6%E6%80%81%E6%A8%A1%E5%BC%8F/">状态模式</a></td>
+<td>State</td>
+<td style="text-align:center"></td>
+</tr>
+<tr>
+<td style="text-align:center">15</td>
+<td><a href="http://qefee.com/2016/05/10/Swift%E8%AE%BE%E8%AE%A1%E6%A8%A1%E5%BC%8F%E4%B9%8B%E8%A7%82%E5%AF%9F%E8%80%85%E6%A8%A1%E5%BC%8F/">观察者模式</a></td>
+<td>Observer</td>
+<td style="text-align:center"></td>
+</tr>
+<tr>
+<td style="text-align:center">16</td>
+<td><a href="http://qefee.com/2016/05/09/Swift%E8%AE%BE%E8%AE%A1%E6%A8%A1%E5%BC%8F%E4%B9%8B%E5%A4%87%E5%BF%98%E5%BD%95%E6%A8%A1%E5%BC%8F/">备忘录模式</a></td>
+<td>Memento</td>
+<td style="text-align:center"></td>
+</tr>
+<tr>
+<td style="text-align:center">17</td>
+<td><a href="http://qefee.com/2016/05/09/Swift%E8%AE%BE%E8%AE%A1%E6%A8%A1%E5%BC%8F%E4%B9%8B%E4%B8%AD%E4%BB%8B%E8%80%85%E6%A8%A1%E5%BC%8F/">中介者模式</a></td>
+<td>Mediator</td>
+<td style="text-align:center"></td>
+</tr>
+<tr>
+<td style="text-align:center">18</td>
+<td><a href="http://qefee.com/2016/05/09/Swift%E8%AE%BE%E8%AE%A1%E6%A8%A1%E5%BC%8F%E4%B9%8B%E8%BF%AD%E4%BB%A3%E5%99%A8%E6%A8%A1%E5%BC%8F/">迭代器模式</a></td>
+<td>Iterator</td>
+<td style="text-align:center"></td>
+</tr>
+<tr>
+<td style="text-align:center">19</td>
+<td><a href="http://qefee.com/2016/05/09/Swift%E8%AE%BE%E8%AE%A1%E6%A8%A1%E5%BC%8F%E4%B9%8B%E8%A7%A3%E9%87%8A%E5%99%A8%E6%A8%A1%E5%BC%8F/">解释器模式</a></td>
+<td>Interpreter</td>
+<td style="text-align:center"></td>
+</tr>
+<tr>
+<td style="text-align:center">20</td>
+<td><a href="http://qefee.com/2016/05/09/Swift%E8%AE%BE%E8%AE%A1%E6%A8%A1%E5%BC%8F%E4%B9%8B%E5%91%BD%E4%BB%A4%E6%A8%A1%E5%BC%8F/">命令模式</a></td>
+<td>Command</td>
+<td style="text-align:center"></td>
+</tr>
+<tr>
+<td style="text-align:center">22</td>
+<td><a href="http://qefee.com/2016/05/09/Swift%E8%AE%BE%E8%AE%A1%E6%A8%A1%E5%BC%8F%E4%B9%8B%E8%B4%A3%E4%BB%BB%E9%93%BE%E6%A8%A1%E5%BC%8F/">责任链模式</a></td>
+<td>Chain Of Responsibility</td>
+</tr>
+</tbody>
+</table>
+<h1 id="源码"><a href="#源码" class="headerlink" title="源码"></a>源码</h1><p>改动了一部分原文章的代码！</p>
+<ul>
+<li><a href="https://github.com/aotian16/Blog/tree/master/Study/Dev/Swift/SwiftDesignPatterns"><strong>SwiftDesignPatterns</strong></a></li>
+</ul>
+<h1 id="参考文章"><a href="#参考文章" class="headerlink" title="参考文章"></a>参考文章</h1><ul>
+<li><a href="http://baike.baidu.com/view/66964.htm">设计模式（百度百科）</a></li>
+<li><a href="http://www.cnblogs.com/justForMe/archive/2011/07/18/2109211.html">设计模式分类</a></li>
+<li><a href="http://www.cnblogs.com/beijiguangyong/archive/2010/11/15/2302807.html">23种设计模式</a></li>
+<li><a href="http://www.runoob.com/design-pattern/design-pattern-tutorial.html">设计模式</a></li>
+</ul>
+        
+          <p class="article-more-link">
+            <a href="/2016/05/12/Swift设计模式整理/#more">Read More</a>
+          </p>
+        
+      
+    </div>
+    <footer class="article-footer">
+      <a data-url="http://qefee.com/2016/05/12/Swift设计模式整理/" data-id="cjgt1z111002osxc9ekjed68j" class="article-share-link">Share</a>
+      
+        <a href="http://qefee.com/2016/05/12/Swift设计模式整理/#disqus_thread" class="article-comment-link">Comments</a>
+      
+      
+  <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/设计模式/">设计模式</a></li></ul>
+
+    </footer>
+  </div>
+  
+</article>
+
+
+  
+    <article id="post-Swift设计模式之保护代理模式" class="article article-type-post" itemscope itemprop="blogPost">
+  <div class="article-meta">
+    <a href="/2016/05/12/Swift设计模式之保护代理模式/" class="article-date">
+  <time datetime="2016-05-12T03:02:01.000Z" itemprop="datePublished">2016-05-12</time>
+</a>
+    
+  <div class="article-category">
+    <a class="article-category-link" href="/categories/ios/">ios</a>
+  </div>
+
+  </div>
+  <div class="article-inner">
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2016/05/12/Swift设计模式之保护代理模式/">Swift设计模式之保护代理模式</a>
+    </h1>
+  
+
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <!--head-->
+<p><strong>转自</strong></p>
+<ul>
+<li><a href="http://qefee.com/tags/%E8%AE%BE%E8%AE%A1%E6%A8%A1%E5%BC%8F/">Swift设计模式</a></li>
+</ul>
+<p><strong>原文</strong></p>
+<ul>
+<li><a href="https://github.com/ochococo/Design-Patterns-In-Swift#behavioral">Design-Patterns-In-Swift</a></li>
+</ul>
+        
+          <p class="article-more-link">
+            <a href="/2016/05/12/Swift设计模式之保护代理模式/#more">Read More</a>
+          </p>
+        
+      
+    </div>
+    <footer class="article-footer">
+      <a data-url="http://qefee.com/2016/05/12/Swift设计模式之保护代理模式/" data-id="cjgt1z0za000wsxc98509doc1" class="article-share-link">Share</a>
+      
+        <a href="http://qefee.com/2016/05/12/Swift设计模式之保护代理模式/#disqus_thread" class="article-comment-link">Comments</a>
+      
+      
+  <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/设计模式/">设计模式</a></li></ul>
+
+    </footer>
+  </div>
+  
+</article>
+
+
+  
+    <article id="post-Swift设计模式之外观模式" class="article article-type-post" itemscope itemprop="blogPost">
+  <div class="article-meta">
+    <a href="/2016/05/12/Swift设计模式之外观模式/" class="article-date">
+  <time datetime="2016-05-12T02:47:50.000Z" itemprop="datePublished">2016-05-12</time>
+</a>
+    
+  <div class="article-category">
+    <a class="article-category-link" href="/categories/ios/">ios</a>
+  </div>
+
+  </div>
+  <div class="article-inner">
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2016/05/12/Swift设计模式之外观模式/">Swift设计模式之外观模式</a>
+    </h1>
+  
+
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <!--head-->
+<p><strong>转自</strong></p>
+<ul>
+<li><a href="http://qefee.com/tags/%E8%AE%BE%E8%AE%A1%E6%A8%A1%E5%BC%8F/">Swift设计模式</a></li>
+</ul>
+<p><strong>原文</strong></p>
+<ul>
+<li><a href="https://github.com/ochococo/Design-Patterns-In-Swift#behavioral">Design-Patterns-In-Swift</a></li>
+</ul>
+        
+          <p class="article-more-link">
+            <a href="/2016/05/12/Swift设计模式之外观模式/#more">Read More</a>
+          </p>
+        
+      
+    </div>
+    <footer class="article-footer">
+      <a data-url="http://qefee.com/2016/05/12/Swift设计模式之外观模式/" data-id="cjgt1z0zp001csxc95szh7dq9" class="article-share-link">Share</a>
+      
+        <a href="http://qefee.com/2016/05/12/Swift设计模式之外观模式/#disqus_thread" class="article-comment-link">Comments</a>
+      
+      
+  <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/设计模式/">设计模式</a></li></ul>
+
+    </footer>
+  </div>
+  
+</article>
+
+
+  
+    <article id="post-Swift设计模式之装饰模式" class="article article-type-post" itemscope itemprop="blogPost">
+  <div class="article-meta">
+    <a href="/2016/05/12/Swift设计模式之装饰模式/" class="article-date">
+  <time datetime="2016-05-12T02:31:25.000Z" itemprop="datePublished">2016-05-12</time>
+</a>
+    
+  <div class="article-category">
+    <a class="article-category-link" href="/categories/ios/">ios</a>
+  </div>
+
+  </div>
+  <div class="article-inner">
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2016/05/12/Swift设计模式之装饰模式/">Swift设计模式之装饰模式</a>
+    </h1>
+  
+
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <!--head-->
+<p><strong>转自</strong></p>
+<ul>
+<li><a href="http://qefee.com/tags/%E8%AE%BE%E8%AE%A1%E6%A8%A1%E5%BC%8F/">Swift设计模式</a></li>
+</ul>
+<p><strong>原文</strong></p>
+<ul>
+<li><a href="https://github.com/ochococo/Design-Patterns-In-Swift#behavioral">Design-Patterns-In-Swift</a></li>
+</ul>
+        
+          <p class="article-more-link">
+            <a href="/2016/05/12/Swift设计模式之装饰模式/#more">Read More</a>
+          </p>
+        
+      
+    </div>
+    <footer class="article-footer">
+      <a data-url="http://qefee.com/2016/05/12/Swift设计模式之装饰模式/" data-id="cjgt1z10d001ysxc90l6nq9td" class="article-share-link">Share</a>
+      
+        <a href="http://qefee.com/2016/05/12/Swift设计模式之装饰模式/#disqus_thread" class="article-comment-link">Comments</a>
+      
+      
+  <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/设计模式/">设计模式</a></li></ul>
+
+    </footer>
+  </div>
+  
+</article>
+
+
+  
+    <article id="post-Swift设计模式之组合模式" class="article article-type-post" itemscope itemprop="blogPost">
+  <div class="article-meta">
+    <a href="/2016/05/12/Swift设计模式之组合模式/" class="article-date">
+  <time datetime="2016-05-12T02:21:08.000Z" itemprop="datePublished">2016-05-12</time>
+</a>
+    
+  <div class="article-category">
+    <a class="article-category-link" href="/categories/ios/">ios</a>
+  </div>
+
+  </div>
+  <div class="article-inner">
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2016/05/12/Swift设计模式之组合模式/">Swift设计模式之组合模式</a>
+    </h1>
+  
+
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <!--head-->
+<p><strong>转自</strong></p>
+<ul>
+<li><a href="http://qefee.com/tags/%E8%AE%BE%E8%AE%A1%E6%A8%A1%E5%BC%8F/">Swift设计模式</a></li>
+</ul>
+<p><strong>原文</strong></p>
+<ul>
+<li><a href="https://github.com/ochococo/Design-Patterns-In-Swift#behavioral">Design-Patterns-In-Swift</a></li>
+</ul>
+        
+          <p class="article-more-link">
+            <a href="/2016/05/12/Swift设计模式之组合模式/#more">Read More</a>
+          </p>
+        
+      
+    </div>
+    <footer class="article-footer">
+      <a data-url="http://qefee.com/2016/05/12/Swift设计模式之组合模式/" data-id="cjgt1z10a001usxc9dlnpd6vr" class="article-share-link">Share</a>
+      
+        <a href="http://qefee.com/2016/05/12/Swift设计模式之组合模式/#disqus_thread" class="article-comment-link">Comments</a>
+      
+      
+  <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/设计模式/">设计模式</a></li></ul>
+
+    </footer>
+  </div>
+  
+</article>
+
+
+  
+    <article id="post-Swift设计模式之桥梁模式" class="article article-type-post" itemscope itemprop="blogPost">
+  <div class="article-meta">
+    <a href="/2016/05/11/Swift设计模式之桥梁模式/" class="article-date">
+  <time datetime="2016-05-11T07:58:02.000Z" itemprop="datePublished">2016-05-11</time>
+</a>
+    
+  <div class="article-category">
+    <a class="article-category-link" href="/categories/ios/">ios</a>
+  </div>
+
+  </div>
+  <div class="article-inner">
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2016/05/11/Swift设计模式之桥梁模式/">Swift设计模式之桥梁模式</a>
+    </h1>
+  
+
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <!--head-->
+<p><strong>转自</strong></p>
+<ul>
+<li><a href="http://qefee.com/tags/%E8%AE%BE%E8%AE%A1%E6%A8%A1%E5%BC%8F/">Swift设计模式</a></li>
+</ul>
+<p><strong>原文</strong></p>
+<ul>
+<li><a href="https://github.com/ochococo/Design-Patterns-In-Swift#behavioral">Design-Patterns-In-Swift</a></li>
+</ul>
+        
+          <p class="article-more-link">
+            <a href="/2016/05/11/Swift设计模式之桥梁模式/#more">Read More</a>
+          </p>
+        
+      
+    </div>
+    <footer class="article-footer">
+      <a data-url="http://qefee.com/2016/05/11/Swift设计模式之桥梁模式/" data-id="cjgt1z0zz001lsxc90u2xmmuh" class="article-share-link">Share</a>
+      
+        <a href="http://qefee.com/2016/05/11/Swift设计模式之桥梁模式/#disqus_thread" class="article-comment-link">Comments</a>
+      
+      
+  <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/设计模式/">设计模式</a></li></ul>
+
+    </footer>
+  </div>
+  
+</article>
+
+
+  
+    <article id="post-Swift设计模式之适配器模式" class="article article-type-post" itemscope itemprop="blogPost">
+  <div class="article-meta">
+    <a href="/2016/05/11/Swift设计模式之适配器模式/" class="article-date">
+  <time datetime="2016-05-11T07:29:12.000Z" itemprop="datePublished">2016-05-11</time>
+</a>
+    
+  <div class="article-category">
+    <a class="article-category-link" href="/categories/ios/">ios</a>
+  </div>
+
+  </div>
+  <div class="article-inner">
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2016/05/11/Swift设计模式之适配器模式/">Swift设计模式之适配器模式</a>
+    </h1>
+  
+
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <!--head-->
+<p><strong>转自</strong></p>
+<ul>
+<li><a href="http://qefee.com/tags/%E8%AE%BE%E8%AE%A1%E6%A8%A1%E5%BC%8F/">Swift设计模式</a></li>
+</ul>
+<p><strong>原文</strong></p>
+<ul>
+<li><a href="https://github.com/ochococo/Design-Patterns-In-Swift#behavioral">Design-Patterns-In-Swift</a></li>
+</ul>
+        
+          <p class="article-more-link">
+            <a href="/2016/05/11/Swift设计模式之适配器模式/#more">Read More</a>
+          </p>
+        
+      
+    </div>
+    <footer class="article-footer">
+      <a data-url="http://qefee.com/2016/05/11/Swift设计模式之适配器模式/" data-id="cjgt1z10x002ksxc94iyu16b2" class="article-share-link">Share</a>
+      
+        <a href="http://qefee.com/2016/05/11/Swift设计模式之适配器模式/#disqus_thread" class="article-comment-link">Comments</a>
+      
+      
+  <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/设计模式/">设计模式</a></li></ul>
+
+    </footer>
+  </div>
+  
+</article>
+
+
+  
+    <article id="post-Swift设计模式之单例模式" class="article article-type-post" itemscope itemprop="blogPost">
+  <div class="article-meta">
+    <a href="/2016/05/11/Swift设计模式之单例模式/" class="article-date">
+  <time datetime="2016-05-11T07:23:17.000Z" itemprop="datePublished">2016-05-11</time>
+</a>
+    
+  <div class="article-category">
+    <a class="article-category-link" href="/categories/ios/">ios</a>
+  </div>
+
+  </div>
+  <div class="article-inner">
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2016/05/11/Swift设计模式之单例模式/">Swift设计模式之单例模式</a>
+    </h1>
+  
+
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <!--head-->
+<p><strong>转自</strong></p>
+<ul>
+<li><a href="http://qefee.com/tags/%E8%AE%BE%E8%AE%A1%E6%A8%A1%E5%BC%8F/">Swift设计模式</a></li>
+</ul>
+<p><strong>原文</strong></p>
+<ul>
+<li><a href="https://github.com/ochococo/Design-Patterns-In-Swift#behavioral">Design-Patterns-In-Swift</a></li>
+</ul>
+        
+          <p class="article-more-link">
+            <a href="/2016/05/11/Swift设计模式之单例模式/#more">Read More</a>
+          </p>
+        
+      
+    </div>
+    <footer class="article-footer">
+      <a data-url="http://qefee.com/2016/05/11/Swift设计模式之单例模式/" data-id="cjgt1z0ze0012sxc9sq1imd1g" class="article-share-link">Share</a>
+      
+        <a href="http://qefee.com/2016/05/11/Swift设计模式之单例模式/#disqus_thread" class="article-comment-link">Comments</a>
+      
+      
+  <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/设计模式/">设计模式</a></li></ul>
+
+    </footer>
+  </div>
+  
+</article>
+
+
+  
+    <article id="post-Swift设计模式之原型模式" class="article article-type-post" itemscope itemprop="blogPost">
+  <div class="article-meta">
+    <a href="/2016/05/11/Swift设计模式之原型模式/" class="article-date">
+  <time datetime="2016-05-11T07:18:08.000Z" itemprop="datePublished">2016-05-11</time>
+</a>
+    
+  <div class="article-category">
+    <a class="article-category-link" href="/categories/ios/">ios</a>
+  </div>
+
+  </div>
+  <div class="article-inner">
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2016/05/11/Swift设计模式之原型模式/">Swift设计模式之原型模式</a>
+    </h1>
+  
+
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <!--head-->
+<p><strong>转自</strong></p>
+<ul>
+<li><a href="http://qefee.com/tags/%E8%AE%BE%E8%AE%A1%E6%A8%A1%E5%BC%8F/">Swift设计模式</a></li>
+</ul>
+<p><strong>原文</strong></p>
+<ul>
+<li><a href="https://github.com/ochococo/Design-Patterns-In-Swift#behavioral">Design-Patterns-In-Swift</a></li>
+</ul>
+        
+          <p class="article-more-link">
+            <a href="/2016/05/11/Swift设计模式之原型模式/#more">Read More</a>
+          </p>
+        
+      
+    </div>
+    <footer class="article-footer">
+      <a data-url="http://qefee.com/2016/05/11/Swift设计模式之原型模式/" data-id="cjgt1z0zk0014sxc936nuavdl" class="article-share-link">Share</a>
+      
+        <a href="http://qefee.com/2016/05/11/Swift设计模式之原型模式/#disqus_thread" class="article-comment-link">Comments</a>
+      
+      
+  <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/设计模式/">设计模式</a></li></ul>
+
+    </footer>
+  </div>
+  
+</article>
+
+
+  
+    <article id="post-Swift设计模式之工厂方法模式" class="article article-type-post" itemscope itemprop="blogPost">
+  <div class="article-meta">
+    <a href="/2016/05/11/Swift设计模式之工厂方法模式/" class="article-date">
+  <time datetime="2016-05-11T06:19:25.000Z" itemprop="datePublished">2016-05-11</time>
+</a>
+    
+  <div class="article-category">
+    <a class="article-category-link" href="/categories/ios/">ios</a>
+  </div>
+
+  </div>
+  <div class="article-inner">
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2016/05/11/Swift设计模式之工厂方法模式/">Swift设计模式之工厂方法模式</a>
+    </h1>
+  
+
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <!--head-->
+<p><strong>转自</strong></p>
+<ul>
+<li><a href="http://qefee.com/tags/%E8%AE%BE%E8%AE%A1%E6%A8%A1%E5%BC%8F/">Swift设计模式</a></li>
+</ul>
+<p><strong>原文</strong></p>
+<ul>
+<li><a href="https://github.com/ochococo/Design-Patterns-In-Swift#behavioral">Design-Patterns-In-Swift</a></li>
+</ul>
+        
+          <p class="article-more-link">
+            <a href="/2016/05/11/Swift设计模式之工厂方法模式/#more">Read More</a>
+          </p>
+        
+      
+    </div>
+    <footer class="article-footer">
+      <a data-url="http://qefee.com/2016/05/11/Swift设计模式之工厂方法模式/" data-id="cjgt1z0zr001gsxc98ryrmyc6" class="article-share-link">Share</a>
+      
+        <a href="http://qefee.com/2016/05/11/Swift设计模式之工厂方法模式/#disqus_thread" class="article-comment-link">Comments</a>
+      
+      
+  <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/设计模式/">设计模式</a></li></ul>
+
+    </footer>
+  </div>
+  
+</article>
+
+
+  
+    <article id="post-Swift设计模式之创建者模式" class="article article-type-post" itemscope itemprop="blogPost">
+  <div class="article-meta">
+    <a href="/2016/05/11/Swift设计模式之创建者模式/" class="article-date">
+  <time datetime="2016-05-11T06:09:59.000Z" itemprop="datePublished">2016-05-11</time>
+</a>
+    
+  <div class="article-category">
+    <a class="article-category-link" href="/categories/ios/">ios</a>
+  </div>
+
+  </div>
+  <div class="article-inner">
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2016/05/11/Swift设计模式之创建者模式/">Swift设计模式之创建者模式</a>
+    </h1>
+  
+
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <!--head-->
+<p><strong>转自</strong></p>
+<ul>
+<li><a href="http://qefee.com/tags/%E8%AE%BE%E8%AE%A1%E6%A8%A1%E5%BC%8F/">Swift设计模式</a></li>
+</ul>
+<p><strong>原文</strong></p>
+<ul>
+<li><a href="https://github.com/ochococo/Design-Patterns-In-Swift#behavioral">Design-Patterns-In-Swift</a></li>
+</ul>
+        
+          <p class="article-more-link">
+            <a href="/2016/05/11/Swift设计模式之创建者模式/#more">Read More</a>
+          </p>
+        
+      
+    </div>
+    <footer class="article-footer">
+      <a data-url="http://qefee.com/2016/05/11/Swift设计模式之创建者模式/" data-id="cjgt1z0zc000ysxc9tk8wnno1" class="article-share-link">Share</a>
+      
+        <a href="http://qefee.com/2016/05/11/Swift设计模式之创建者模式/#disqus_thread" class="article-comment-link">Comments</a>
+      
+      
+  <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/设计模式/">设计模式</a></li></ul>
+
+    </footer>
+  </div>
+  
+</article>
+
+
+  
+    <article id="post-Swift设计模式之抽象工厂模式" class="article article-type-post" itemscope itemprop="blogPost">
+  <div class="article-meta">
+    <a href="/2016/05/10/Swift设计模式之抽象工厂模式/" class="article-date">
+  <time datetime="2016-05-10T12:19:34.000Z" itemprop="datePublished">2016-05-10</time>
+</a>
+    
+  <div class="article-category">
+    <a class="article-category-link" href="/categories/ios/">ios</a>
+  </div>
+
+  </div>
+  <div class="article-inner">
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2016/05/10/Swift设计模式之抽象工厂模式/">Swift设计模式之抽象工厂模式</a>
+    </h1>
+  
+
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <!--head-->
+<p><strong>转自</strong></p>
+<ul>
+<li><a href="http://qefee.com/tags/%E8%AE%BE%E8%AE%A1%E6%A8%A1%E5%BC%8F/">Swift设计模式</a></li>
+</ul>
+<p><strong>原文</strong></p>
+<ul>
+<li><a href="https://github.com/ochococo/Design-Patterns-In-Swift#behavioral">Design-Patterns-In-Swift</a></li>
+</ul>
+        
+          <p class="article-more-link">
+            <a href="/2016/05/10/Swift设计模式之抽象工厂模式/#more">Read More</a>
+          </p>
+        
+      
+    </div>
+    <footer class="article-footer">
+      <a data-url="http://qefee.com/2016/05/10/Swift设计模式之抽象工厂模式/" data-id="cjgt1z0zt001isxc9u9kf62ae" class="article-share-link">Share</a>
+      
+        <a href="http://qefee.com/2016/05/10/Swift设计模式之抽象工厂模式/#disqus_thread" class="article-comment-link">Comments</a>
+      
+      
+  <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/设计模式/">设计模式</a></li></ul>
+
+    </footer>
+  </div>
+  
+</article>
+
+
+  
+    <article id="post-Swift设计模式之访问者模式" class="article article-type-post" itemscope itemprop="blogPost">
+  <div class="article-meta">
+    <a href="/2016/05/10/Swift设计模式之访问者模式/" class="article-date">
+  <time datetime="2016-05-10T09:46:12.000Z" itemprop="datePublished">2016-05-10</time>
+</a>
+    
+  <div class="article-category">
+    <a class="article-category-link" href="/categories/ios/">ios</a>
+  </div>
+
+  </div>
+  <div class="article-inner">
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2016/05/10/Swift设计模式之访问者模式/">Swift设计模式之访问者模式</a>
+    </h1>
+  
+
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <!--head-->
+<p><strong>转自</strong></p>
+<ul>
+<li><a href="http://qefee.com/tags/%E8%AE%BE%E8%AE%A1%E6%A8%A1%E5%BC%8F/">Swift设计模式</a></li>
+</ul>
+<p><strong>原文</strong></p>
+<ul>
+<li><a href="https://github.com/ochococo/Design-Patterns-In-Swift#behavioral">Design-Patterns-In-Swift</a></li>
+</ul>
+        
+          <p class="article-more-link">
+            <a href="/2016/05/10/Swift设计模式之访问者模式/#more">Read More</a>
+          </p>
+        
+      
+    </div>
+    <footer class="article-footer">
+      <a data-url="http://qefee.com/2016/05/10/Swift设计模式之访问者模式/" data-id="cjgt1z10m0028sxc9w7b2cplc" class="article-share-link">Share</a>
+      
+        <a href="http://qefee.com/2016/05/10/Swift设计模式之访问者模式/#disqus_thread" class="article-comment-link">Comments</a>
+      
+      
+  <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/设计模式/">设计模式</a></li></ul>
+
+    </footer>
+  </div>
+  
+</article>
+
+
+  
+    <article id="post-Swift设计模式之策略模式" class="article article-type-post" itemscope itemprop="blogPost">
+  <div class="article-meta">
+    <a href="/2016/05/10/Swift设计模式之策略模式/" class="article-date">
+  <time datetime="2016-05-10T09:36:01.000Z" itemprop="datePublished">2016-05-10</time>
+</a>
+    
+  <div class="article-category">
+    <a class="article-category-link" href="/categories/ios/">ios</a>
+  </div>
+
+  </div>
+  <div class="article-inner">
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2016/05/10/Swift设计模式之策略模式/">Swift设计模式之策略模式</a>
+    </h1>
+  
+
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <!--head-->
+<p><strong>转自</strong></p>
+<ul>
+<li><a href="http://qefee.com/tags/%E8%AE%BE%E8%AE%A1%E6%A8%A1%E5%BC%8F/">Swift设计模式</a></li>
+</ul>
+<p><strong>原文</strong></p>
+<ul>
+<li><a href="https://github.com/ochococo/Design-Patterns-In-Swift#behavioral">Design-Patterns-In-Swift</a></li>
+</ul>
+        
+          <p class="article-more-link">
+            <a href="/2016/05/10/Swift设计模式之策略模式/#more">Read More</a>
+          </p>
+        
+      
+    </div>
+    <footer class="article-footer">
+      <a data-url="http://qefee.com/2016/05/10/Swift设计模式之策略模式/" data-id="cjgt1z105001rsxc9rkxbmbau" class="article-share-link">Share</a>
+      
+        <a href="http://qefee.com/2016/05/10/Swift设计模式之策略模式/#disqus_thread" class="article-comment-link">Comments</a>
+      
+      
+  <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/设计模式/">设计模式</a></li></ul>
+
+    </footer>
+  </div>
+  
+</article>
+
+
+  
+    <article id="post-Swift设计模式之状态模式" class="article article-type-post" itemscope itemprop="blogPost">
+  <div class="article-meta">
+    <a href="/2016/05/10/Swift设计模式之状态模式/" class="article-date">
+  <time datetime="2016-05-10T09:27:52.000Z" itemprop="datePublished">2016-05-10</time>
+</a>
+    
+  <div class="article-category">
+    <a class="article-category-link" href="/categories/ios/">ios</a>
+  </div>
+
+  </div>
+  <div class="article-inner">
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2016/05/10/Swift设计模式之状态模式/">Swift设计模式之状态模式</a>
+    </h1>
+  
+
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <!--head-->
+<p><strong>转自</strong></p>
+<ul>
+<li><a href="http://qefee.com/tags/%E8%AE%BE%E8%AE%A1%E6%A8%A1%E5%BC%8F/">Swift设计模式</a></li>
+</ul>
+<p><strong>原文</strong></p>
+<ul>
+<li><a href="https://github.com/ochococo/Design-Patterns-In-Swift#behavioral">Design-Patterns-In-Swift</a></li>
+</ul>
+        
+          <p class="article-more-link">
+            <a href="/2016/05/10/Swift设计模式之状态模式/#more">Read More</a>
+          </p>
+        
+      
+    </div>
+    <footer class="article-footer">
+      <a data-url="http://qefee.com/2016/05/10/Swift设计模式之状态模式/" data-id="cjgt1z102001nsxc9gukooly2" class="article-share-link">Share</a>
+      
+        <a href="http://qefee.com/2016/05/10/Swift设计模式之状态模式/#disqus_thread" class="article-comment-link">Comments</a>
+      
+      
+  <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/设计模式/">设计模式</a></li></ul>
+
+    </footer>
+  </div>
+  
+</article>
+
+
+  
+    <article id="post-Swift设计模式之观察者模式" class="article article-type-post" itemscope itemprop="blogPost">
+  <div class="article-meta">
+    <a href="/2016/05/10/Swift设计模式之观察者模式/" class="article-date">
+  <time datetime="2016-05-10T08:07:29.000Z" itemprop="datePublished">2016-05-10</time>
+</a>
+    
+  <div class="article-category">
+    <a class="article-category-link" href="/categories/ios/">ios</a>
+  </div>
+
+  </div>
+  <div class="article-inner">
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2016/05/10/Swift设计模式之观察者模式/">Swift设计模式之观察者模式</a>
+    </h1>
+  
+
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <!--head-->
+<p><strong>转自</strong></p>
+<ul>
+<li><a href="http://qefee.com/tags/%E8%AE%BE%E8%AE%A1%E6%A8%A1%E5%BC%8F/">Swift设计模式</a></li>
+</ul>
+<p><strong>原文</strong></p>
+<ul>
+<li><a href="https://github.com/ochococo/Design-Patterns-In-Swift#behavioral">Design-Patterns-In-Swift</a></li>
+</ul>
+        
+          <p class="article-more-link">
+            <a href="/2016/05/10/Swift设计模式之观察者模式/#more">Read More</a>
+          </p>
+        
+      
+    </div>
+    <footer class="article-footer">
+      <a data-url="http://qefee.com/2016/05/10/Swift设计模式之观察者模式/" data-id="cjgt1z10g0021sxc9eaqv7u57" class="article-share-link">Share</a>
+      
+        <a href="http://qefee.com/2016/05/10/Swift设计模式之观察者模式/#disqus_thread" class="article-comment-link">Comments</a>
+      
+      
+  <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/设计模式/">设计模式</a></li></ul>
+
+    </footer>
+  </div>
+  
+</article>
+
+
+  
+    <article id="post-Swift设计模式之备忘录模式" class="article article-type-post" itemscope itemprop="blogPost">
+  <div class="article-meta">
+    <a href="/2016/05/09/Swift设计模式之备忘录模式/" class="article-date">
+  <time datetime="2016-05-09T09:33:08.000Z" itemprop="datePublished">2016-05-09</time>
+</a>
+    
+  <div class="article-category">
+    <a class="article-category-link" href="/categories/ios/">ios</a>
+  </div>
+
+  </div>
+  <div class="article-inner">
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2016/05/09/Swift设计模式之备忘录模式/">Swift设计模式之备忘录模式</a>
+    </h1>
+  
+
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <!--head-->
+<p><strong>转自</strong></p>
+<ul>
+<li><a href="http://qefee.com/tags/%E8%AE%BE%E8%AE%A1%E6%A8%A1%E5%BC%8F/">Swift设计模式</a></li>
+</ul>
+<p><strong>原文</strong></p>
+<ul>
+<li><a href="https://github.com/ochococo/Design-Patterns-In-Swift#behavioral">Design-Patterns-In-Swift</a></li>
+</ul>
+        
+          <p class="article-more-link">
+            <a href="/2016/05/09/Swift设计模式之备忘录模式/#more">Read More</a>
+          </p>
+        
+      
+    </div>
+    <footer class="article-footer">
+      <a data-url="http://qefee.com/2016/05/09/Swift设计模式之备忘录模式/" data-id="cjgt1z0zo001asxc9rqotscdq" class="article-share-link">Share</a>
+      
+        <a href="http://qefee.com/2016/05/09/Swift设计模式之备忘录模式/#disqus_thread" class="article-comment-link">Comments</a>
+      
+      
+  <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/设计模式/">设计模式</a></li></ul>
+
+    </footer>
+  </div>
+  
+</article>
+
+
+  
+    <article id="post-Swift设计模式之中介者模式" class="article article-type-post" itemscope itemprop="blogPost">
+  <div class="article-meta">
+    <a href="/2016/05/09/Swift设计模式之中介者模式/" class="article-date">
+  <time datetime="2016-05-09T09:13:10.000Z" itemprop="datePublished">2016-05-09</time>
+</a>
+    
+  <div class="article-category">
+    <a class="article-category-link" href="/categories/ios/">ios</a>
+  </div>
+
+  </div>
+  <div class="article-inner">
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2016/05/09/Swift设计模式之中介者模式/">Swift设计模式之中介者模式</a>
+    </h1>
+  
+
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <!--head-->
+<p><strong>转自</strong></p>
+<ul>
+<li><a href="http://qefee.com/tags/%E8%AE%BE%E8%AE%A1%E6%A8%A1%E5%BC%8F/">Swift设计模式</a></li>
+</ul>
+<p><strong>原文</strong></p>
+<ul>
+<li><a href="https://github.com/ochococo/Design-Patterns-In-Swift#behavioral">Design-Patterns-In-Swift</a></li>
+</ul>
+        
+          <p class="article-more-link">
+            <a href="/2016/05/09/Swift设计模式之中介者模式/#more">Read More</a>
+          </p>
+        
+      
+    </div>
+    <footer class="article-footer">
+      <a data-url="http://qefee.com/2016/05/09/Swift设计模式之中介者模式/" data-id="cjgt1z0z8000tsxc9umewvun5" class="article-share-link">Share</a>
+      
+        <a href="http://qefee.com/2016/05/09/Swift设计模式之中介者模式/#disqus_thread" class="article-comment-link">Comments</a>
+      
+      
+  <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/设计模式/">设计模式</a></li></ul>
+
+    </footer>
+  </div>
+  
+</article>
+
+
+  
+    <article id="post-Swift设计模式之迭代器模式" class="article article-type-post" itemscope itemprop="blogPost">
+  <div class="article-meta">
+    <a href="/2016/05/09/Swift设计模式之迭代器模式/" class="article-date">
+  <time datetime="2016-05-09T08:48:47.000Z" itemprop="datePublished">2016-05-09</time>
+</a>
+    
+  <div class="article-category">
+    <a class="article-category-link" href="/categories/ios/">ios</a>
+  </div>
+
+  </div>
+  <div class="article-inner">
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2016/05/09/Swift设计模式之迭代器模式/">Swift设计模式之迭代器模式</a>
+    </h1>
+  
+
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <!--head-->
+<p><strong>转自</strong></p>
+<ul>
+<li><a href="http://qefee.com/tags/%E8%AE%BE%E8%AE%A1%E6%A8%A1%E5%BC%8F/">Swift设计模式</a></li>
+</ul>
+<p><strong>原文</strong></p>
+<ul>
+<li><a href="https://github.com/ochococo/Design-Patterns-In-Swift#behavioral">Design-Patterns-In-Swift</a></li>
+</ul>
+        
+          <p class="article-more-link">
+            <a href="/2016/05/09/Swift设计模式之迭代器模式/#more">Read More</a>
+          </p>
+        
+      
+    </div>
+    <footer class="article-footer">
+      <a data-url="http://qefee.com/2016/05/09/Swift设计模式之迭代器模式/" data-id="cjgt1z10t002gsxc950t4mzjx" class="article-share-link">Share</a>
+      
+        <a href="http://qefee.com/2016/05/09/Swift设计模式之迭代器模式/#disqus_thread" class="article-comment-link">Comments</a>
+      
+      
+  <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/设计模式/">设计模式</a></li></ul>
+
+    </footer>
+  </div>
+  
+</article>
+
+
+  
+    <article id="post-Swift设计模式之解释器模式" class="article article-type-post" itemscope itemprop="blogPost">
+  <div class="article-meta">
+    <a href="/2016/05/09/Swift设计模式之解释器模式/" class="article-date">
+  <time datetime="2016-05-09T07:12:52.000Z" itemprop="datePublished">2016-05-09</time>
+</a>
+    
+  <div class="article-category">
+    <a class="article-category-link" href="/categories/ios/">ios</a>
+  </div>
+
+  </div>
+  <div class="article-inner">
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2016/05/09/Swift设计模式之解释器模式/">Swift设计模式之解释器模式</a>
+    </h1>
+  
+
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <!--head-->
+<p><strong>转自</strong></p>
+<ul>
+<li><a href="http://qefee.com/tags/%E8%AE%BE%E8%AE%A1%E6%A8%A1%E5%BC%8F/">Swift设计模式</a></li>
+</ul>
+<p><strong>原文</strong></p>
+<ul>
+<li><a href="https://github.com/ochococo/Design-Patterns-In-Swift#behavioral">Design-Patterns-In-Swift</a></li>
+</ul>
+        
+          <p class="article-more-link">
+            <a href="/2016/05/09/Swift设计模式之解释器模式/#more">Read More</a>
+          </p>
+        
+      
+    </div>
+    <footer class="article-footer">
+      <a data-url="http://qefee.com/2016/05/09/Swift设计模式之解释器模式/" data-id="cjgt1z10j0024sxc90gtny0hh" class="article-share-link">Share</a>
+      
+        <a href="http://qefee.com/2016/05/09/Swift设计模式之解释器模式/#disqus_thread" class="article-comment-link">Comments</a>
+      
+      
+  <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/设计模式/">设计模式</a></li></ul>
+
+    </footer>
+  </div>
+  
+</article>
+
+
+  
+    <article id="post-Swift设计模式之命令模式" class="article article-type-post" itemscope itemprop="blogPost">
+  <div class="article-meta">
+    <a href="/2016/05/09/Swift设计模式之命令模式/" class="article-date">
+  <time datetime="2016-05-09T06:03:21.000Z" itemprop="datePublished">2016-05-09</time>
+</a>
+    
+  <div class="article-category">
+    <a class="article-category-link" href="/categories/ios/">ios</a>
+  </div>
+
+  </div>
+  <div class="article-inner">
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2016/05/09/Swift设计模式之命令模式/">Swift设计模式之命令模式</a>
+    </h1>
+  
+
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <!--head-->
+<p><strong>转自</strong></p>
+<ul>
+<li><a href="http://qefee.com/tags/%E8%AE%BE%E8%AE%A1%E6%A8%A1%E5%BC%8F/">Swift设计模式</a></li>
+</ul>
+<p><strong>原文</strong></p>
+<ul>
+<li><a href="https://github.com/ochococo/Design-Patterns-In-Swift#behavioral">Design-Patterns-In-Swift</a></li>
+</ul>
+        
+          <p class="article-more-link">
+            <a href="/2016/05/09/Swift设计模式之命令模式/#more">Read More</a>
+          </p>
+        
+      
+    </div>
+    <footer class="article-footer">
+      <a data-url="http://qefee.com/2016/05/09/Swift设计模式之命令模式/" data-id="cjgt1z0zm0018sxc9x467g0c4" class="article-share-link">Share</a>
+      
+        <a href="http://qefee.com/2016/05/09/Swift设计模式之命令模式/#disqus_thread" class="article-comment-link">Comments</a>
+      
+      
+  <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/设计模式/">设计模式</a></li></ul>
+
+    </footer>
+  </div>
+  
+</article>
+
+
+  
+    <article id="post-Swift设计模式之责任链模式" class="article article-type-post" itemscope itemprop="blogPost">
+  <div class="article-meta">
+    <a href="/2016/05/09/Swift设计模式之责任链模式/" class="article-date">
+  <time datetime="2016-05-09T05:47:16.000Z" itemprop="datePublished">2016-05-09</time>
+</a>
+    
+  <div class="article-category">
+    <a class="article-category-link" href="/categories/ios/">ios</a>
+  </div>
+
+  </div>
+  <div class="article-inner">
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2016/05/09/Swift设计模式之责任链模式/">Swift设计模式之责任链模式</a>
+    </h1>
+  
+
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <!--head-->
+<p><strong>转自</strong></p>
+<ul>
+<li><a href="http://qefee.com/tags/%E8%AE%BE%E8%AE%A1%E6%A8%A1%E5%BC%8F/">Swift设计模式</a></li>
+</ul>
+<p><strong>原文</strong></p>
+<ul>
+<li><a href="https://github.com/ochococo/Design-Patterns-In-Swift#behavioral">Design-Patterns-In-Swift</a></li>
+</ul>
+        
+          <p class="article-more-link">
+            <a href="/2016/05/09/Swift设计模式之责任链模式/#more">Read More</a>
+          </p>
+        
+      
+    </div>
+    <footer class="article-footer">
+      <a data-url="http://qefee.com/2016/05/09/Swift设计模式之责任链模式/" data-id="cjgt1z10p002csxc9w6epzdtt" class="article-share-link">Share</a>
+      
+        <a href="http://qefee.com/2016/05/09/Swift设计模式之责任链模式/#disqus_thread" class="article-comment-link">Comments</a>
+      
+      
+  <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/设计模式/">设计模式</a></li></ul>
+
+    </footer>
+  </div>
+  
+</article>
+
+
+  
+    <article id="post-Guava学习" class="article article-type-post" itemscope itemprop="blogPost">
+  <div class="article-meta">
+    <a href="/2016/04/15/Guava学习/" class="article-date">
+  <time datetime="2016-04-15T13:10:40.000Z" itemprop="datePublished">2016-04-15</time>
+</a>
+    
+  <div class="article-category">
+    <a class="article-category-link" href="/categories/java/">java</a>
+  </div>
+
+  </div>
+  <div class="article-inner">
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2016/04/15/Guava学习/">Guava学习</a>
+    </h1>
+  
+
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <!--head-->
+<p>学习下google的Guava包.</p>
+<p>写几个demo试试.</p>
+<p>github地址: <strong><a href="https://github.com/google/guava">guava</a></strong></p>
+        
+          <p class="article-more-link">
+            <a href="/2016/04/15/Guava学习/#more">Read More</a>
+          </p>
+        
+      
+    </div>
+    <footer class="article-footer">
+      <a data-url="http://qefee.com/2016/04/15/Guava学习/" data-id="cjgt1z0z3000ksxc96kw6snxf" class="article-share-link">Share</a>
+      
+        <a href="http://qefee.com/2016/04/15/Guava学习/#disqus_thread" class="article-comment-link">Comments</a>
+      
+      
+  <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/guava/">guava</a></li></ul>
+
+    </footer>
+  </div>
+  
+</article>
+
+
+  
+    <article id="post-Fork-me-on-GitHub" class="article article-type-post" itemscope itemprop="blogPost">
+  <div class="article-meta">
+    <a href="/2016/04/15/Fork-me-on-GitHub/" class="article-date">
+  <time datetime="2016-04-15T08:43:31.000Z" itemprop="datePublished">2016-04-15</time>
+</a>
+    
+  <div class="article-category">
+    <a class="article-category-link" href="/categories/qefee/">qefee</a>
+  </div>
+
+  </div>
+  <div class="article-inner">
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2016/04/15/Fork-me-on-GitHub/">Fork me on GitHub</a>
+    </h1>
+  
+
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <!--head-->
+<p>在首页上添加了Fork me on GitHub图标.</p>
+<p>貌似更加高大上了.O(∩_∩)O~</p>
+<h3 id="修改文件"><a href="#修改文件" class="headerlink" title="修改文件:"></a>修改文件:</h3><ul>
+<li>themes\landscape\layout\layout.ejs</li>
+</ul>
+<h3 id="修改内容"><a href="#修改内容" class="headerlink" title="修改内容:"></a>修改内容:</h3><p><code>body</code>末尾添加以下内容, 注意自己修改<strong>github地址</strong>以及<strong>图标位置</strong>.</p>
+<figure class="highlight html"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">a</span> <span class="attr">href</span>=<span class="string">"https://github.com/aotian16"</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">img</span> <span class="attr">style</span>=<span class="string">"position: absolute; top: 300px; right: 0; border: 0; z-index: 100;"</span> <span class="attr">src</span>=<span class="string">"https://camo.githubusercontent.com/365986a132ccd6a44c23a9169022c0b5c890c387/68747470733a2f2f73332e616d617a6f6e6177732e636f6d2f6769746875622f726962626f6e732f666f726b6d655f72696768745f7265645f6161303030302e706e67"</span> <span class="attr">alt</span>=<span class="string">"Fork me on GitHub"</span> <span class="attr">data-canonical-src</span>=<span class="string">"https://s3.amazonaws.com/github/ribbons/forkme_right_red_aa0000.png"</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">a</span>&gt;</span></span><br></pre></td></tr></table></figure>
+<h3 id="参考文章"><a href="#参考文章" class="headerlink" title="参考文章"></a>参考文章</h3><ul>
+<li><a href="http://codepub.cn/2016/03/20/Hexo-blog-theme-switching-from-Jacman-to-NexT-Mist/">Hexo博客主题从Jacman切换到NexT.Mist</a></li>
+</ul>
+        
+          <p class="article-more-link">
+            <a href="/2016/04/15/Fork-me-on-GitHub/#more">Read More</a>
+          </p>
+        
+      
+    </div>
+    <footer class="article-footer">
+      <a data-url="http://qefee.com/2016/04/15/Fork-me-on-GitHub/" data-id="cjgt1z0yz000fsxc9uu01d4vd" class="article-share-link">Share</a>
+      
+        <a href="http://qefee.com/2016/04/15/Fork-me-on-GitHub/#disqus_thread" class="article-comment-link">Comments</a>
+      
+      
+  <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/qefee/">qefee</a></li></ul>
+
+    </footer>
+  </div>
+  
+</article>
+
+
+  
+    <article id="post-多pc之间同步源码" class="article article-type-post" itemscope itemprop="blogPost">
+  <div class="article-meta">
+    <a href="/2016/04/15/多pc之间同步源码/" class="article-date">
+  <time datetime="2016-04-15T08:08:13.000Z" itemprop="datePublished">2016-04-15</time>
+</a>
+    
+  <div class="article-category">
+    <a class="article-category-link" href="/categories/qefee/">qefee</a>
+  </div>
+
+  </div>
+  <div class="article-inner">
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2016/04/15/多pc之间同步源码/">多pc之间同步源码</a>
+    </h1>
+  
+
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <!--head-->
+<p>将qefee.com的源码放在了github上去了, <strong><a href="https://github.com/aotian16/qefeeSource">qefeeSource</a></strong>.</p>
+<p>以后就可以在几个电脑上同步, 而不是一直拷贝了.</p>
+<p><strong>参考文章</strong></p>
+<ul>
+<li><a href="http://rainnie.me/2016/03/13/%E5%88%A9%E7%94%A8git-%E8%A7%A3%E5%86%B3hexo%E5%8D%9A%E5%AE%A2%E5%A4%9APC-%E9%97%B4%E5%90%8C%E6%AD%A5%E9%97%AE%E9%A2%98/">利用git 解决hexo博客多PC 间同步问题</a></li>
+</ul>
+        
+          <p class="article-more-link">
+            <a href="/2016/04/15/多pc之间同步源码/#more">Read More</a>
+          </p>
+        
+      
+    </div>
+    <footer class="article-footer">
+      <a data-url="http://qefee.com/2016/04/15/多pc之间同步源码/" data-id="cjgt1z15w00bzsxc90ffxt3ca" class="article-share-link">Share</a>
+      
+        <a href="http://qefee.com/2016/04/15/多pc之间同步源码/#disqus_thread" class="article-comment-link">Comments</a>
+      
+      
+  <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/qefee/">qefee</a></li></ul>
+
+    </footer>
+  </div>
+  
+</article>
+
+
+  
+    <article id="post-java8新语法学习" class="article article-type-post" itemscope itemprop="blogPost">
+  <div class="article-meta">
+    <a href="/2016/04/13/java8新语法学习/" class="article-date">
+  <time datetime="2016-04-13T13:25:29.000Z" itemprop="datePublished">2016-04-13</time>
+</a>
+    
+  <div class="article-category">
+    <a class="article-category-link" href="/categories/java/">java</a>
+  </div>
+
+  </div>
+  <div class="article-inner">
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2016/04/13/java8新语法学习/">java8新语法学习</a>
+    </h1>
+  
+
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <!--head-->
+<p>From: <a href="http://qefee.com/2016/04/13/java8%E6%96%B0%E8%AF%AD%E6%B3%95%E5%AD%A6%E4%B9%A0/">java8新语法学习</a></p>
+<p>简单用代码学习下java8新增的语法.<br>详细强烈推荐阅读参考文章.</p>
+        
+          <p class="article-more-link">
+            <a href="/2016/04/13/java8新语法学习/#more">Read More</a>
+          </p>
+        
+      
+    </div>
+    <footer class="article-footer">
+      <a data-url="http://qefee.com/2016/04/13/java8新语法学习/" data-id="cjgt1z15c00apsxc961ig9bxd" class="article-share-link">Share</a>
+      
+        <a href="http://qefee.com/2016/04/13/java8新语法学习/#disqus_thread" class="article-comment-link">Comments</a>
+      
+      
+  <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/java/">java</a></li></ul>
+
+    </footer>
+  </div>
+  
+</article>
+
+
+  
+    <article id="post-ios中使用SegmentedControl来切换视图" class="article article-type-post" itemscope itemprop="blogPost">
+  <div class="article-meta">
+    <a href="/2016/03/11/ios中使用SegmentedControl来切换视图/" class="article-date">
+  <time datetime="2016-03-11T06:55:36.000Z" itemprop="datePublished">2016-03-11</time>
+</a>
+    
+  <div class="article-category">
+    <a class="article-category-link" href="/categories/ios/">ios</a>
+  </div>
+
+  </div>
+  <div class="article-inner">
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2016/03/11/ios中使用SegmentedControl来切换视图/">ios中使用SegmentedControl来切换视图</a>
+    </h1>
+  
+
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <!--head-->
+<p>[TOC]</p>
+<h1 id="From"><a href="#From" class="headerlink" title="From"></a>From</h1><p><a href="http://qefee.com/2016/03/11/ios%E4%B8%AD%E4%BD%BF%E7%94%A8SegmentedControl%E6%9D%A5%E5%88%87%E6%8D%A2%E8%A7%86%E5%9B%BE/">ios中使用SegmentedControl来切换视图</a></p>
+<h1 id="效果图"><a href="#效果图" class="headerlink" title="效果图"></a>效果图</h1><p><img src="http://qefee.qiniudn.com/20160311_ios%E4%B8%AD%E4%BD%BF%E7%94%A8SegmentedControl%E6%9D%A5%E5%88%87%E6%8D%A2%E8%A7%86%E5%9B%BE_run.gif" alt="run"></p>
+        
+          <p class="article-more-link">
+            <a href="/2016/03/11/ios中使用SegmentedControl来切换视图/#more">Read More</a>
+          </p>
+        
+      
+    </div>
+    <footer class="article-footer">
+      <a data-url="http://qefee.com/2016/03/11/ios中使用SegmentedControl来切换视图/" data-id="cjgt1z15800aisxc9ext4yqri" class="article-share-link">Share</a>
+      
+        <a href="http://qefee.com/2016/03/11/ios中使用SegmentedControl来切换视图/#disqus_thread" class="article-comment-link">Comments</a>
+      
+      
+  <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/SegmentedControl/">SegmentedControl</a></li></ul>
+
+    </footer>
+  </div>
+  
+</article>
+
+
+  
+    <article id="post-ios的toolbar的item的几种简单布局" class="article article-type-post" itemscope itemprop="blogPost">
+  <div class="article-meta">
+    <a href="/2016/03/10/ios的toolbar的item的几种简单布局/" class="article-date">
+  <time datetime="2016-03-10T08:23:54.000Z" itemprop="datePublished">2016-03-10</time>
+</a>
+    
+  <div class="article-category">
+    <a class="article-category-link" href="/categories/ios/">ios</a>
+  </div>
+
+  </div>
+  <div class="article-inner">
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2016/03/10/ios的toolbar的item的几种简单布局/">ios的toolbar的item的几种简单布局</a>
+    </h1>
+  
+
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <!--head-->
+<p>From: <a href="http://qefee.com/2016/03/10/ios%E7%9A%84toolbar%E7%9A%84item%E7%9A%84%E5%87%A0%E7%A7%8D%E7%AE%80%E5%8D%95%E5%B8%83%E5%B1%80/?from=csdn">ios的toolbar的item的几种简单布局</a></p>
+<p>简单介绍toolbar的几种布局方法</p>
+<ol>
+<li>居中</li>
+<li>固定长度</li>
+<li>分隔在两端</li>
+</ol>
+        
+          <p class="article-more-link">
+            <a href="/2016/03/10/ios的toolbar的item的几种简单布局/#more">Read More</a>
+          </p>
+        
+      
+    </div>
+    <footer class="article-footer">
+      <a data-url="http://qefee.com/2016/03/10/ios的toolbar的item的几种简单布局/" data-id="cjgt1z15a00alsxc9dd9kbhbz" class="article-share-link">Share</a>
+      
+        <a href="http://qefee.com/2016/03/10/ios的toolbar的item的几种简单布局/#disqus_thread" class="article-comment-link">Comments</a>
+      
+      
+  <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/toolbar/">toolbar</a></li></ul>
+
+    </footer>
+  </div>
+  
+</article>
+
+
+  
+  
+    <nav id="page-nav">
+      <a class="extend prev" rel="prev" href="/">&laquo; Prev</a><a class="page-number" href="/">1</a><span class="page-number current">2</span><a class="page-number" href="/page/3/">3</a><a class="page-number" href="/page/4/">4</a><a class="page-number" href="/page/5/">5</a><a class="extend next" rel="next" href="/page/3/">Next &raquo;</a>
+    </nav>
+  
+</section>
+        
+          <aside id="sidebar">
+  
+    
+  <div class="widget-wrap">
+    <h3 class="widget-title">Categories</h3>
+    <div class="widget">
+      <ul class="category-list"><li class="category-list-item"><a class="category-list-link" href="/categories/android/">android</a><span class="category-list-count">29</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/cordova/">cordova</a><span class="category-list-count">2</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/go/">go</a><span class="category-list-count">46</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/html/">html</a><span class="category-list-count">1</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/interesting/">interesting</a><span class="category-list-count">2</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/ios/">ios</a><span class="category-list-count">26</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/java/">java</a><span class="category-list-count">2</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/javascript/">javascript</a><span class="category-list-count">1</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/jquerymobile/">jquerymobile</a><span class="category-list-count">1</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/mac/">mac</a><span class="category-list-count">1</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/nodejs/">nodejs</a><span class="category-list-count">2</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/qefee/">qefee</a><span class="category-list-count">12</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/swift/">swift</a><span class="category-list-count">2</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/tools/">tools</a><span class="category-list-count">4</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/typescript/">typescript</a><span class="category-list-count">1</span></li></ul>
+    </div>
+  </div>
+
+  
+    
+  <div class="widget-wrap">
+    <h3 class="widget-title">Tags</h3>
+    <div class="widget">
+      <ul class="tag-list"><li class="tag-list-item"><a class="tag-list-link" href="/tags/BuildConfig/">BuildConfig</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/CoordinatorLayout/">CoordinatorLayout</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/SegmentedControl/">SegmentedControl</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Snackbar/">Snackbar</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/aidl/">aidl</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/android/">android</a><span class="tag-list-count">13</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/animate/">animate</a><span class="tag-list-count">2</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/banner/">banner</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/cordova/">cordova</a><span class="tag-list-count">2</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/flexbox/">flexbox</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/fsnotify/">fsnotify</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/go/">go</a><span class="tag-list-count">6</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/gobyexample/">gobyexample</a><span class="tag-list-count">39</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/guava/">guava</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/hexo/">hexo</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/idea/">idea</a><span class="tag-list-count">2</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/interesting/">interesting</a><span class="tag-list-count">2</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/java/">java</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/javascript/">javascript</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/jquerymobile/">jquerymobile</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/mac/">mac</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/nodejs/">nodejs</a><span class="tag-list-count">2</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/permission/">permission</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/proxy/">proxy</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/qefee/">qefee</a><span class="tag-list-count">11</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/record/">record</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/room/">room</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/screenrecord/">screenrecord</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/sensor/">sensor</a><span class="tag-list-count">2</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/swift/">swift</a><span class="tag-list-count">3</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/toolbar/">toolbar</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/tools/">tools</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/typescript/">typescript</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/viewpager/">viewpager</a><span class="tag-list-count">3</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/公益/">公益</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/动画/">动画</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/设计模式/">设计模式</a><span class="tag-list-count">22</span></li></ul>
+    </div>
+  </div>
+
+  
+    
+  <div class="widget-wrap">
+    <h3 class="widget-title">Tag Cloud</h3>
+    <div class="widget tagcloud">
+      <a href="/tags/BuildConfig/" style="font-size: 10px;">BuildConfig</a> <a href="/tags/CoordinatorLayout/" style="font-size: 10px;">CoordinatorLayout</a> <a href="/tags/SegmentedControl/" style="font-size: 10px;">SegmentedControl</a> <a href="/tags/Snackbar/" style="font-size: 10px;">Snackbar</a> <a href="/tags/aidl/" style="font-size: 10px;">aidl</a> <a href="/tags/android/" style="font-size: 17.14px;">android</a> <a href="/tags/animate/" style="font-size: 11.43px;">animate</a> <a href="/tags/banner/" style="font-size: 10px;">banner</a> <a href="/tags/cordova/" style="font-size: 11.43px;">cordova</a> <a href="/tags/flexbox/" style="font-size: 10px;">flexbox</a> <a href="/tags/fsnotify/" style="font-size: 10px;">fsnotify</a> <a href="/tags/go/" style="font-size: 14.29px;">go</a> <a href="/tags/gobyexample/" style="font-size: 20px;">gobyexample</a> <a href="/tags/guava/" style="font-size: 10px;">guava</a> <a href="/tags/hexo/" style="font-size: 10px;">hexo</a> <a href="/tags/idea/" style="font-size: 11.43px;">idea</a> <a href="/tags/interesting/" style="font-size: 11.43px;">interesting</a> <a href="/tags/java/" style="font-size: 10px;">java</a> <a href="/tags/javascript/" style="font-size: 10px;">javascript</a> <a href="/tags/jquerymobile/" style="font-size: 10px;">jquerymobile</a> <a href="/tags/mac/" style="font-size: 10px;">mac</a> <a href="/tags/nodejs/" style="font-size: 11.43px;">nodejs</a> <a href="/tags/permission/" style="font-size: 10px;">permission</a> <a href="/tags/proxy/" style="font-size: 10px;">proxy</a> <a href="/tags/qefee/" style="font-size: 15.71px;">qefee</a> <a href="/tags/record/" style="font-size: 10px;">record</a> <a href="/tags/room/" style="font-size: 10px;">room</a> <a href="/tags/screenrecord/" style="font-size: 10px;">screenrecord</a> <a href="/tags/sensor/" style="font-size: 11.43px;">sensor</a> <a href="/tags/swift/" style="font-size: 12.86px;">swift</a> <a href="/tags/toolbar/" style="font-size: 10px;">toolbar</a> <a href="/tags/tools/" style="font-size: 10px;">tools</a> <a href="/tags/typescript/" style="font-size: 10px;">typescript</a> <a href="/tags/viewpager/" style="font-size: 12.86px;">viewpager</a> <a href="/tags/公益/" style="font-size: 10px;">公益</a> <a href="/tags/动画/" style="font-size: 10px;">动画</a> <a href="/tags/设计模式/" style="font-size: 18.57px;">设计模式</a>
+    </div>
+  </div>
+
+  
+    
+  <div class="widget-wrap">
+    <h3 class="widget-title">Archives</h3>
+    <div class="widget">
+      <ul class="archive-list"><li class="archive-list-item"><a class="archive-list-link" href="/archives/2018/05/">May 2018</a><span class="archive-list-count">4</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2016/12/">December 2016</a><span class="archive-list-count">2</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2016/11/">November 2016</a><span class="archive-list-count">3</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2016/09/">September 2016</a><span class="archive-list-count">2</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2016/08/">August 2016</a><span class="archive-list-count">2</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2016/07/">July 2016</a><span class="archive-list-count">7</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2016/06/">June 2016</a><span class="archive-list-count">8</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2016/05/">May 2016</a><span class="archive-list-count">26</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2016/04/">April 2016</a><span class="archive-list-count">4</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2016/03/">March 2016</a><span class="archive-list-count">2</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2016/02/">February 2016</a><span class="archive-list-count">4</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2016/01/">January 2016</a><span class="archive-list-count">7</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2015/12/">December 2015</a><span class="archive-list-count">1</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2014/03/">March 2014</a><span class="archive-list-count">45</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2014/02/">February 2014</a><span class="archive-list-count">16</span></li></ul>
+    </div>
+  </div>
+
+  
+    
+  <div class="widget-wrap">
+    <h3 class="widget-title">Recents</h3>
+    <div class="widget">
+      <ul>
+        
+          <li>
+            <a href="/2018/05/05/20180505-android传感器种类及获取/">20180505_android传感器种类及获取</a>
+          </li>
+        
+          <li>
+            <a href="/2018/05/04/20180504-android传感器入门之光线传感器/">20180504_android传感器入门之光线传感器</a>
+          </li>
+        
+          <li>
+            <a href="/2018/05/03/20180503-android简单使用AIDL实现IPC进程间通信/">20180503_android简单使用AIDL实现IPC进程间通信</a>
+          </li>
+        
+          <li>
+            <a href="/2018/05/02/20180502-从零开始的android持久库room其一/">20180502_从零开始的android持久库room其一</a>
+          </li>
+        
+          <li>
+            <a href="/2016/12/07/AwesomeAndroidTips/">AwesomeAndroidTips</a>
+          </li>
+        
+      </ul>
+    </div>
+  </div>
+
+  
+</aside>
+        
+      </div>
+      <footer id="footer">
+  
+  <div class="outer">
+    <div id="footer-info" class="inner">
+      &copy; 2018 qefee<br>
+      Powered by <a href="http://hexo.io/" target="_blank">Hexo</a>
+    </div>
+  </div>
+</footer>
+    </div>
+    <nav id="mobile-nav">
+  
+    <a href="/" class="mobile-nav-link">Home</a>
+  
+    <a href="/archives" class="mobile-nav-link">Archives</a>
+  
+    <a href="/about" class="mobile-nav-link">About</a>
+  
+</nav>
+    
+<script>
+  var disqus_shortname = 'qefee';
+  
+  (function(){
+    var dsq = document.createElement('script');
+    dsq.type = 'text/javascript';
+    dsq.async = true;
+    dsq.src = '//' + disqus_shortname + '.disqus.com/count.js';
+    (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
+  })();
+</script>
+
+
+<script src="//ajax.googleapis.com/ajax/libs/jquery/2.0.3/jquery.min.js"></script>
+
+
+  <link rel="stylesheet" href="/fancybox/jquery.fancybox.css">
+  <script src="/fancybox/jquery.fancybox.pack.js"></script>
+
+
+<script src="/js/script.js"></script>
+
+  </div>
+  
+  <!-- add by tongjin -->
+  <a href="https://github.com/aotian16">
+  <img style="position: absolute; top: 300px; right: 0; border: 0; z-index: 100;" src="https://camo.githubusercontent.com/365986a132ccd6a44c23a9169022c0b5c890c387/68747470733a2f2f73332e616d617a6f6e6177732e636f6d2f6769746875622f726962626f6e732f666f726b6d655f72696768745f7265645f6161303030302e706e67" alt="Fork me on GitHub" data-canonical-src="https://s3.amazonaws.com/github/ribbons/forkme_right_red_aa0000.png">
+  </a>
+  
+</body>
+</html>

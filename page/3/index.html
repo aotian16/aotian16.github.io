@@ -1,0 +1,1943 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  
+  <title>启飞</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+  <meta name="description" content="一个简单的博客">
+<meta property="og:type" content="website">
+<meta property="og:title" content="启飞">
+<meta property="og:url" content="http://qefee.com/page/3/index.html">
+<meta property="og:site_name" content="启飞">
+<meta property="og:description" content="一个简单的博客">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="启飞">
+<meta name="twitter:description" content="一个简单的博客">
+  
+    <link rel="alternative" href="/atom.xml" title="启飞" type="application/atom+xml">
+  
+  
+    <link rel="icon" href="/favicon.png">
+  
+  <link href="//fonts.googleapis.com/css?family=Source+Code+Pro" rel="stylesheet" type="text/css">
+  <link rel="stylesheet" href="/css/style.css">
+  
+<!-- Google Analytics -->
+<script type="text/javascript">
+(function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+(i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+})(window,document,'script','//www.google-analytics.com/analytics.js','ga');
+
+ga('create', 'UA-47713171-1', 'auto');
+ga('send', 'pageview');
+
+</script>
+<!-- End Google Analytics -->
+
+
+</head>
+
+<body>
+  <div id="container">
+    <div id="wrap">
+      <header id="header">
+  <div id="banner"></div>
+  <div id="header-outer" class="outer">
+    <div id="header-title" class="inner">
+      <h1 id="logo-wrap">
+        <a href="/" id="logo">启飞</a>
+      </h1>
+      
+        <h2 id="subtitle-wrap">
+          <a href="/" id="subtitle">自己自在</a>
+        </h2>
+      
+    </div>
+    <div id="header-inner" class="inner">
+      <nav id="main-nav">
+        <a id="main-nav-toggle" class="nav-icon"></a>
+        
+          <a class="main-nav-link" href="/">Home</a>
+        
+          <a class="main-nav-link" href="/archives">Archives</a>
+        
+          <a class="main-nav-link" href="/about">About</a>
+        
+      </nav>
+      <nav id="sub-nav">
+        
+          <a id="nav-rss-link" class="nav-icon" href="/atom.xml" title="RSS Feed"></a>
+        
+        <a id="nav-search-btn" class="nav-icon" title="Search"></a>
+      </nav>
+      <div id="search-form-wrap">
+        <form action="//google.com/search" method="get" accept-charset="UTF-8" class="search-form"><input type="search" name="q" results="0" class="search-form-input" placeholder="Search"><button type="submit" class="search-form-submit">&#xF002;</button><input type="hidden" name="sitesearch" value="http://qefee.com"></form>
+      </div>
+    </div>
+  </div>
+</header>
+      <div class="outer">
+        <section id="main">
+  
+    <article id="post-cordova开发ios时候getScript函数无效的解决办法" class="article article-type-post" itemscope itemprop="blogPost">
+  <div class="article-meta">
+    <a href="/2016/02/26/cordova开发ios时候getScript函数无效的解决办法/" class="article-date">
+  <time datetime="2016-02-26T15:33:30.000Z" itemprop="datePublished">2016-02-26</time>
+</a>
+    
+  <div class="article-category">
+    <a class="article-category-link" href="/categories/cordova/">cordova</a>
+  </div>
+
+  </div>
+  <div class="article-inner">
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2016/02/26/cordova开发ios时候getScript函数无效的解决办法/">cordova开发ios时候getScript函数无效的解决办法</a>
+    </h1>
+  
+
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <!--head-->
+<p>在开发<code>cordova</code>程序的时候遇到一个需求, 就是想要利用<code>jquery</code>的<code>getScript</code>动态加载<code>JavaScript</code>.</p>
+<p><strong>代码如下:</strong></p>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">$.getScript(root + <span class="string">"/js/other.js"</span>, <span class="function"><span class="keyword">function</span>(<span class="params">response, status</span>) </span>&#123;</span><br><span class="line">    <span class="built_in">console</span>.log(response, status);</span><br><span class="line">&#125;);</span><br></pre></td></tr></table></figure>
+<p>问题是, 在浏览器环境browser中运行可以的, 在ios中却报错(android没有试过),找不到文件.</p>
+<p>既然找不到文件, 就找到我们要的路径也就可以了.</p>
+<p>可以通过<code>window.location.href</code>来获取.</p>
+<ul>
+<li>在browser中显示”<a href="http://localhost:8000/index.html">http://localhost:8000/index.html</a>“,</li>
+</ul>
+<ul>
+<li>在iOS显示”xxxx(记不住了, 反正不重要)/index.html”.</li>
+</ul>
+<p>可以看出来得到的是包括index.html的路径.</p>
+<p>我们需要的是父目录, 因为js文件在另外一个文件夹中.</p>
+<p><strong>代码如下:</strong></p>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">var</span> href = <span class="built_in">window</span>.location.href;</span><br><span class="line"><span class="keyword">var</span> root = href.substr(<span class="number">0</span>, href.length - <span class="number">11</span>); <span class="comment">// 这里除去了'/index.html'</span></span><br><span class="line"></span><br><span class="line">$.getScript(root + <span class="string">"/js/other.js"</span>, <span class="function"><span class="keyword">function</span>(<span class="params">response, status</span>) </span>&#123;</span><br><span class="line">    <span class="built_in">console</span>.log(response, status);</span><br><span class="line">&#125;);</span><br></pre></td></tr></table></figure>
+<p><strong>注意事项:</strong></p>
+<p>android环境没有尝试, 请自行测试.</p>
+        
+          <p class="article-more-link">
+            <a href="/2016/02/26/cordova开发ios时候getScript函数无效的解决办法/#more">Read More</a>
+          </p>
+        
+      
+    </div>
+    <footer class="article-footer">
+      <a data-url="http://qefee.com/2016/02/26/cordova开发ios时候getScript函数无效的解决办法/" data-id="cjgt1z12x005msxc91hyqneeu" class="article-share-link">Share</a>
+      
+        <a href="http://qefee.com/2016/02/26/cordova开发ios时候getScript函数无效的解决办法/#disqus_thread" class="article-comment-link">Comments</a>
+      
+      
+  <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/cordova/">cordova</a></li></ul>
+
+    </footer>
+  </div>
+  
+</article>
+
+
+  
+    <article id="post-CryptoJS简单使用" class="article article-type-post" itemscope itemprop="blogPost">
+  <div class="article-meta">
+    <a href="/2016/02/25/CryptoJS简单使用/" class="article-date">
+  <time datetime="2016-02-25T07:40:23.000Z" itemprop="datePublished">2016-02-25</time>
+</a>
+    
+  <div class="article-category">
+    <a class="article-category-link" href="/categories/javascript/">javascript</a>
+  </div>
+
+  </div>
+  <div class="article-inner">
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2016/02/25/CryptoJS简单使用/">CryptoJS简单使用</a>
+    </h1>
+  
+
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <!--head-->
+<p>CryptoJS简单使用. 简单看下几种加密和哈希函数.</p>
+<ol>
+<li>md5</li>
+<li>sha1</li>
+<li>ase</li>
+<li>base</li>
+</ol>
+        
+          <p class="article-more-link">
+            <a href="/2016/02/25/CryptoJS简单使用/#more">Read More</a>
+          </p>
+        
+      
+    </div>
+    <footer class="article-footer">
+      <a data-url="http://qefee.com/2016/02/25/CryptoJS简单使用/" data-id="cjgt1z0yw000dsxc9ukms088u" class="article-share-link">Share</a>
+      
+        <a href="http://qefee.com/2016/02/25/CryptoJS简单使用/#disqus_thread" class="article-comment-link">Comments</a>
+      
+      
+  <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/javascript/">javascript</a></li></ul>
+
+    </footer>
+  </div>
+  
+</article>
+
+
+  
+    <article id="post-macbook频繁掉线的解决办法" class="article article-type-post" itemscope itemprop="blogPost">
+  <div class="article-meta">
+    <a href="/2016/02/23/macbook频繁掉线的解决办法/" class="article-date">
+  <time datetime="2016-02-23T08:10:57.000Z" itemprop="datePublished">2016-02-23</time>
+</a>
+    
+  <div class="article-category">
+    <a class="article-category-link" href="/categories/mac/">mac</a>
+  </div>
+
+  </div>
+  <div class="article-inner">
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2016/02/23/macbook频繁掉线的解决办法/">macbook频繁掉线的解决办法</a>
+    </h1>
+  
+
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <!--head-->
+<p>转自<a href="http://apple.stackexchange.com/questions/195359/wifi-keeps-dropping-macbook-pro-13in-retina-early-2015">Wifi Keeps Dropping Macbook Pro 13in Retina Early 2015</a></p>
+<h3 id="一-断开wifi"><a href="#一-断开wifi" class="headerlink" title="一. 断开wifi"></a>一. 断开wifi</h3><h3 id="二-打开finder"><a href="#二-打开finder" class="headerlink" title="二. 打开finder"></a>二. 打开finder</h3><h3 id="三-使用快捷键Cmd-Shft-G-进入文件夹-Library-Preferences-SystemConfiguration"><a href="#三-使用快捷键Cmd-Shft-G-进入文件夹-Library-Preferences-SystemConfiguration" class="headerlink" title="三. 使用快捷键Cmd+Shft+G, 进入文件夹/Library/Preferences/SystemConfiguration/"></a>三. 使用快捷键<code>Cmd+Shft+G</code>, 进入文件夹<code>/Library/Preferences/SystemConfiguration/</code></h3><h3 id="四-删除以下文件-怕出问题可以备份文件"><a href="#四-删除以下文件-怕出问题可以备份文件" class="headerlink" title="四. 删除以下文件(怕出问题可以备份文件)"></a>四. 删除以下文件(怕出问题可以备份文件)</h3><ul>
+<li><code>com.apple.airport.preferences.plist</code></li>
+<li><code>NetworkInterfaces.plist</code></li>
+<li><code>preferences.plist</code></li>
+</ul>
+<h3 id="五-重启电脑"><a href="#五-重启电脑" class="headerlink" title="五. 重启电脑"></a>五. 重启电脑</h3><h3 id="六-连接wifi"><a href="#六-连接wifi" class="headerlink" title="六. 连接wifi"></a>六. 连接wifi</h3>
+        
+          <p class="article-more-link">
+            <a href="/2016/02/23/macbook频繁掉线的解决办法/#more">Read More</a>
+          </p>
+        
+      
+    </div>
+    <footer class="article-footer">
+      <a data-url="http://qefee.com/2016/02/23/macbook频繁掉线的解决办法/" data-id="cjgt1z15j00b0sxc9l4nsdkd6" class="article-share-link">Share</a>
+      
+        <a href="http://qefee.com/2016/02/23/macbook频繁掉线的解决办法/#disqus_thread" class="article-comment-link">Comments</a>
+      
+      
+  <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/mac/">mac</a></li></ul>
+
+    </footer>
+  </div>
+  
+</article>
+
+
+  
+    <article id="post-cordova入门" class="article article-type-post" itemscope itemprop="blogPost">
+  <div class="article-meta">
+    <a href="/2016/02/17/cordova入门/" class="article-date">
+  <time datetime="2016-02-17T01:43:48.000Z" itemprop="datePublished">2016-02-17</time>
+</a>
+    
+  <div class="article-category">
+    <a class="article-category-link" href="/categories/cordova/">cordova</a>
+  </div>
+
+  </div>
+  <div class="article-inner">
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2016/02/17/cordova入门/">cordova入门</a>
+    </h1>
+  
+
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <!--head-->
+<p>主要来自官网, 后面用一个简单的<code>DeviceInfo</code>项目来走一个完整流程.</p>
+<p>自己也是菜鸟, 刚刚开始学习, 有问题的地方请指教.</p>
+        
+          <p class="article-more-link">
+            <a href="/2016/02/17/cordova入门/#more">Read More</a>
+          </p>
+        
+      
+    </div>
+    <footer class="article-footer">
+      <a data-url="http://qefee.com/2016/02/17/cordova入门/" data-id="cjgt1z132005usxc9eh5r5h84" class="article-share-link">Share</a>
+      
+        <a href="http://qefee.com/2016/02/17/cordova入门/#disqus_thread" class="article-comment-link">Comments</a>
+      
+      
+  <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/cordova/">cordova</a></li></ul>
+
+    </footer>
+  </div>
+  
+</article>
+
+
+  
+    <article id="post-fonts-googleapis-com加载慢的解决办法" class="article article-type-post" itemscope itemprop="blogPost">
+  <div class="article-meta">
+    <a href="/2016/01/26/fonts-googleapis-com加载慢的解决办法/" class="article-date">
+  <time datetime="2016-01-26T04:38:05.000Z" itemprop="datePublished">2016-01-26</time>
+</a>
+    
+  <div class="article-category">
+    <a class="article-category-link" href="/categories/qefee/">qefee</a>
+  </div>
+
+  </div>
+  <div class="article-inner">
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2016/01/26/fonts-googleapis-com加载慢的解决办法/">fonts.googleapis.com加载慢的解决办法</a>
+    </h1>
+  
+
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <!--head-->
+<p><strong>修改文件</strong><br><code>hexo目录/themes/你的主题/layout/_partial/head.ejs</code></p>
+<p>将<code>fonts.googleapis.com</code>替换为<code>fonts.useso.com</code>.</p>
+<p><strong>refer</strong><br><a href="http://libs.useso.com/">360网站卫士常用前端公共库CDN服务</a></p>
+        
+          <p class="article-more-link">
+            <a href="/2016/01/26/fonts-googleapis-com加载慢的解决办法/#more">Read More</a>
+          </p>
+        
+      
+    </div>
+    <footer class="article-footer">
+      <a data-url="http://qefee.com/2016/01/26/fonts-googleapis-com加载慢的解决办法/" data-id="cjgt1z1350061sxc94ipgkbi3" class="article-share-link">Share</a>
+      
+        <a href="http://qefee.com/2016/01/26/fonts-googleapis-com加载慢的解决办法/#disqus_thread" class="article-comment-link">Comments</a>
+      
+      
+  <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/qefee/">qefee</a></li></ul>
+
+    </footer>
+  </div>
+  
+</article>
+
+
+  
+    <article id="post-jquerymobile的content高度100-占满屏幕剩余空间" class="article article-type-post" itemscope itemprop="blogPost">
+  <div class="article-meta">
+    <a href="/2016/01/26/jquerymobile的content高度100-占满屏幕剩余空间/" class="article-date">
+  <time datetime="2016-01-26T02:56:45.000Z" itemprop="datePublished">2016-01-26</time>
+</a>
+    
+  <div class="article-category">
+    <a class="article-category-link" href="/categories/jquerymobile/">jquerymobile</a>
+  </div>
+
+  </div>
+  <div class="article-inner">
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2016/01/26/jquerymobile的content高度100-占满屏幕剩余空间/">jquerymobile的content高度100%占满屏幕剩余空间</a>
+    </h1>
+  
+
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <!--head-->
+<p>[TOC]</p>
+<h1 id="Why"><a href="#Why" class="headerlink" title="Why"></a>Why</h1><p>为了让content占满空间, 我们需要一段js代码.</p>
+<p><strong>&lt;图片来自参考文章&gt;</strong></p>
+<h2 id="before"><a href="#before" class="headerlink" title="before"></a>before</h2><p><img src="https://jqmtricks.files.wordpress.com/2014/02/before.png?w=338&amp;h=600" alt="image"></p>
+<h2 id="after"><a href="#after" class="headerlink" title="after"></a>after</h2><p><img src="https://jqmtricks.files.wordpress.com/2014/02/after.png?w=338&amp;h=600" alt="image"></p>
+        
+          <p class="article-more-link">
+            <a href="/2016/01/26/jquerymobile的content高度100-占满屏幕剩余空间/#more">Read More</a>
+          </p>
+        
+      
+    </div>
+    <footer class="article-footer">
+      <a data-url="http://qefee.com/2016/01/26/jquerymobile的content高度100-占满屏幕剩余空间/" data-id="cjgt1z15d00assxc9mo236c8c" class="article-share-link">Share</a>
+      
+        <a href="http://qefee.com/2016/01/26/jquerymobile的content高度100-占满屏幕剩余空间/#disqus_thread" class="article-comment-link">Comments</a>
+      
+      
+  <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/jquerymobile/">jquerymobile</a></li></ul>
+
+    </footer>
+  </div>
+  
+</article>
+
+
+  
+    <article id="post-TypeScript入门-语法篇" class="article article-type-post" itemscope itemprop="blogPost">
+  <div class="article-meta">
+    <a href="/2016/01/21/TypeScript入门-语法篇/" class="article-date">
+  <time datetime="2016-01-21T02:12:16.000Z" itemprop="datePublished">2016-01-21</time>
+</a>
+    
+  <div class="article-category">
+    <a class="article-category-link" href="/categories/typescript/">typescript</a>
+  </div>
+
+  </div>
+  <div class="article-inner">
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2016/01/21/TypeScript入门-语法篇/">TypeScript入门-语法篇</a>
+    </h1>
+  
+
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <p>自学笔记, 基于官方教程上的代码, 添加注释.</p>
+<p><strong>官方教程:</strong></p>
+<p><a href="http://www.typescriptlang.org/Handbook">Handbook</a></p>
+<hr>
+<p>[TOC]</p>
+<!--head-->
+        
+          <p class="article-more-link">
+            <a href="/2016/01/21/TypeScript入门-语法篇/#more">Read More</a>
+          </p>
+        
+      
+    </div>
+    <footer class="article-footer">
+      <a data-url="http://qefee.com/2016/01/21/TypeScript入门-语法篇/" data-id="cjgt1z112002ssxc9s3k8xmo7" class="article-share-link">Share</a>
+      
+        <a href="http://qefee.com/2016/01/21/TypeScript入门-语法篇/#disqus_thread" class="article-comment-link">Comments</a>
+      
+      
+  <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/typescript/">typescript</a></li></ul>
+
+    </footer>
+  </div>
+  
+</article>
+
+
+  
+    <article id="post-在vps上搭建代理服务器" class="article article-type-post" itemscope itemprop="blogPost">
+  <div class="article-meta">
+    <a href="/2016/01/13/在vps上搭建代理服务器/" class="article-date">
+  <time datetime="2016-01-13T03:06:26.000Z" itemprop="datePublished">2016-01-13</time>
+</a>
+    
+  <div class="article-category">
+    <a class="article-category-link" href="/categories/tools/">tools</a>
+  </div>
+
+  </div>
+  <div class="article-inner">
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2016/01/13/在vps上搭建代理服务器/">在vps上搭建代理服务器</a>
+    </h1>
+  
+
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <!--head-->
+<p>由于<strong>你懂的</strong>原因, 我们需要代理翻墙.</p>
+<p>[TOC]</p>
+<h1 id="几种连接方式"><a href="#几种连接方式" class="headerlink" title="几种连接方式"></a>几种连接方式</h1><table>
+<thead>
+<tr>
+<th style="text-align:center">no</th>
+<th>name</th>
+<th>info</th>
+<th>image</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align:center">1</td>
+<td>direct</td>
+<td>不行</td>
+<td><img src="http://qefee.qiniudn.com/20160113_%E5%9C%A8vps%E4%B8%8A%E6%90%AD%E5%BB%BA%E4%BB%A3%E7%90%86%E6%9C%8D%E5%8A%A1%E5%99%A8direct.png" alt="direct"></td>
+</tr>
+<tr>
+<td style="text-align:center">2</td>
+<td>proxy</td>
+<td>刚开始可以, 过一会就不行</td>
+<td><img src="http://qefee.qiniudn.com/20160113_%E5%9C%A8vps%E4%B8%8A%E6%90%AD%E5%BB%BA%E4%BB%A3%E7%90%86%E6%9C%8D%E5%8A%A1%E5%99%A8proxy.png" alt="direct"></td>
+</tr>
+<tr>
+<td style="text-align:center">3</td>
+<td>encrypt proxy</td>
+<td>可以</td>
+<td><img src="http://qefee.qiniudn.com/20160113_%E5%9C%A8vps%E4%B8%8A%E6%90%AD%E5%BB%BA%E4%BB%A3%E7%90%86%E6%9C%8D%E5%8A%A1%E5%99%A8encrypt%20proxy.png" alt="encrypt"></td>
+</tr>
+</tbody>
+</table>
+<p>看图3就可以知道, 我们需要一个代理服务器, 也就是我们的vps.</p>
+<p>客户端加密后通过代理服务器来翻墙.</p>
+        
+          <p class="article-more-link">
+            <a href="/2016/01/13/在vps上搭建代理服务器/#more">Read More</a>
+          </p>
+        
+      
+    </div>
+    <footer class="article-footer">
+      <a data-url="http://qefee.com/2016/01/13/在vps上搭建代理服务器/" data-id="cjgt1z15v00busxc955s0jrg4" class="article-share-link">Share</a>
+      
+        <a href="http://qefee.com/2016/01/13/在vps上搭建代理服务器/#disqus_thread" class="article-comment-link">Comments</a>
+      
+      
+  <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/proxy/">proxy</a></li></ul>
+
+    </footer>
+  </div>
+  
+</article>
+
+
+  
+    <article id="post-nodejs自动签到程序" class="article article-type-post" itemscope itemprop="blogPost">
+  <div class="article-meta">
+    <a href="/2016/01/07/nodejs自动签到程序/" class="article-date">
+  <time datetime="2016-01-07T09:41:59.000Z" itemprop="datePublished">2016-01-07</time>
+</a>
+    
+  <div class="article-category">
+    <a class="article-category-link" href="/categories/nodejs/">nodejs</a>
+  </div>
+
+  </div>
+  <div class="article-inner">
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2016/01/07/nodejs自动签到程序/">nodejs自动签到程序</a>
+    </h1>
+  
+
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <!--head-->
+<p>用<code>nodejs</code>做了个自动签到程序, 还是挺有成就感的.</p>
+<p>[TOC]</p>
+<h2 id="程序功能"><a href="#程序功能" class="headerlink" title="程序功能"></a>程序功能</h2><ol>
+<li>模拟登录和签到</li>
+<li>发送邮件</li>
+<li>简单加密</li>
+</ol>
+        
+          <p class="article-more-link">
+            <a href="/2016/01/07/nodejs自动签到程序/#more">Read More</a>
+          </p>
+        
+      
+    </div>
+    <footer class="article-footer">
+      <a data-url="http://qefee.com/2016/01/07/nodejs自动签到程序/" data-id="cjgt1z15l00b4sxc9h87i96ko" class="article-share-link">Share</a>
+      
+        <a href="http://qefee.com/2016/01/07/nodejs自动签到程序/#disqus_thread" class="article-comment-link">Comments</a>
+      
+      
+  <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/nodejs/">nodejs</a></li></ul>
+
+    </footer>
+  </div>
+  
+</article>
+
+
+  
+    <article id="post-用nodejs实现简单的http服务器" class="article article-type-post" itemscope itemprop="blogPost">
+  <div class="article-meta">
+    <a href="/2016/01/07/用nodejs实现简单的http服务器/" class="article-date">
+  <time datetime="2016-01-07T01:05:15.000Z" itemprop="datePublished">2016-01-07</time>
+</a>
+    
+  <div class="article-category">
+    <a class="article-category-link" href="/categories/nodejs/">nodejs</a>
+  </div>
+
+  </div>
+  <div class="article-inner">
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2016/01/07/用nodejs实现简单的http服务器/">用nodejs实现简单的http服务器</a>
+    </h1>
+  
+
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <!--head-->
+<p>教你一步一步用nodejs实现一个文件照片上传服务器.</p>
+<p>需要熟悉的前提技术:</p>
+<ol>
+<li>javascript</li>
+<li>http request response</li>
+</ol>
+<p>[TOC]</p>
+        
+          <p class="article-more-link">
+            <a href="/2016/01/07/用nodejs实现简单的http服务器/#more">Read More</a>
+          </p>
+        
+      
+    </div>
+    <footer class="article-footer">
+      <a data-url="http://qefee.com/2016/01/07/用nodejs实现简单的http服务器/" data-id="cjgt1z16100c9sxc914bz7ohn" class="article-share-link">Share</a>
+      
+        <a href="http://qefee.com/2016/01/07/用nodejs实现简单的http服务器/#disqus_thread" class="article-comment-link">Comments</a>
+      
+      
+  <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/nodejs/">nodejs</a></li></ul>
+
+    </footer>
+  </div>
+  
+</article>
+
+
+  
+    <article id="post-flexbox布局入门" class="article article-type-post" itemscope itemprop="blogPost">
+  <div class="article-meta">
+    <a href="/2016/01/06/flexbox布局入门/" class="article-date">
+  <time datetime="2016-01-06T03:06:22.000Z" itemprop="datePublished">2016-01-06</time>
+</a>
+    
+  <div class="article-category">
+    <a class="article-category-link" href="/categories/html/">html</a>
+  </div>
+
+  </div>
+  <div class="article-inner">
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2016/01/06/flexbox布局入门/">flexbox布局入门</a>
+    </h1>
+  
+
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <!--head-->
+<p>照着参考文章写了几个demo,也算入门了吧.</p>
+<p>本文就是罗列下属性, 详细请看参考文章</p>
+        
+          <p class="article-more-link">
+            <a href="/2016/01/06/flexbox布局入门/#more">Read More</a>
+          </p>
+        
+      
+    </div>
+    <footer class="article-footer">
+      <a data-url="http://qefee.com/2016/01/06/flexbox布局入门/" data-id="cjgt1z134005xsxc92ded10v0" class="article-share-link">Share</a>
+      
+        <a href="http://qefee.com/2016/01/06/flexbox布局入门/#disqus_thread" class="article-comment-link">Comments</a>
+      
+      
+  <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/flexbox/">flexbox</a></li></ul>
+
+    </footer>
+  </div>
+  
+</article>
+
+
+  
+    <article id="post-元旦快乐" class="article article-type-post" itemscope itemprop="blogPost">
+  <div class="article-meta">
+    <a href="/2015/12/31/元旦快乐/" class="article-date">
+  <time datetime="2015-12-31T13:26:01.000Z" itemprop="datePublished">2015-12-31</time>
+</a>
+    
+  </div>
+  <div class="article-inner">
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2015/12/31/元旦快乐/">元旦快乐</a>
+    </h1>
+  
+
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <p>时隔一年,再次开始写博客.</p>
+
+      
+    </div>
+    <footer class="article-footer">
+      <a data-url="http://qefee.com/2015/12/31/元旦快乐/" data-id="cjgt1z15s00bnsxc9932l8pbx" class="article-share-link">Share</a>
+      
+        <a href="http://qefee.com/2015/12/31/元旦快乐/#disqus_thread" class="article-comment-link">Comments</a>
+      
+      
+  <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/qefee/">qefee</a></li></ul>
+
+    </footer>
+  </div>
+  
+</article>
+
+
+  
+    <article id="post-android菜单按钮长按事件监听" class="article article-type-post" itemscope itemprop="blogPost">
+  <div class="article-meta">
+    <a href="/2014/03/17/android菜单按钮长按事件监听/" class="article-date">
+  <time datetime="2014-03-17T14:22:47.000Z" itemprop="datePublished">2014-03-17</time>
+</a>
+    
+  <div class="article-category">
+    <a class="article-category-link" href="/categories/android/">android</a>
+  </div>
+
+  </div>
+  <div class="article-inner">
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2014/03/17/android菜单按钮长按事件监听/">android菜单按钮长按事件监听</a>
+    </h1>
+  
+
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <!--head-->
+<p>refer <a href="http://stackoverflow.com/questions/10867033/how-to-access-menu-button-onlongclick-in-android" title="How to access menu button onLongClick in Android?">“How to access menu button onLongClick in Android?”</a></p>
+<p><strong>code</strong></p>
+        
+          <p class="article-more-link">
+            <a href="/2014/03/17/android菜单按钮长按事件监听/#more">Read More</a>
+          </p>
+        
+      
+    </div>
+    <footer class="article-footer">
+      <a data-url="http://qefee.com/2014/03/17/android菜单按钮长按事件监听/" data-id="cjgt1z12u005fsxc9fmqmwsg8" class="article-share-link">Share</a>
+      
+        <a href="http://qefee.com/2014/03/17/android菜单按钮长按事件监听/#disqus_thread" class="article-comment-link">Comments</a>
+      
+      
+  <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/android/">android</a></li></ul>
+
+    </footer>
+  </div>
+  
+</article>
+
+
+  
+    <article id="post-gobyexample_sorting" class="article article-type-post" itemscope itemprop="blogPost">
+  <div class="article-meta">
+    <a href="/2014/03/16/gobyexample_sorting/" class="article-date">
+  <time datetime="2014-03-16T13:24:55.000Z" itemprop="datePublished">2014-03-16</time>
+</a>
+    
+  <div class="article-category">
+    <a class="article-category-link" href="/categories/go/">go</a>
+  </div>
+
+  </div>
+  <div class="article-inner">
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2014/03/16/gobyexample_sorting/">gobyexample_sorting</a>
+    </h1>
+  
+
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <!--head-->
+<p>========</p>
+<p><strong>参考网站</strong></p>
+<ul>
+<li><a href="https://gobyexample.com/" title="gobyexample">gobyexample</a></li>
+<li><a href="http://bbs.csdn.net/topics/390557446" title="go语言简单示例">go语言简单示例(gobyexample翻译)</a></li>
+<li><a href="http://qefee.com/tags/gobyexample/" title="启飞">启飞(gobyexample源码注释版)</a></li>
+</ul>
+<p>========</p>
+<p><strong>go 排序</strong></p>
+        
+          <p class="article-more-link">
+            <a href="/2014/03/16/gobyexample_sorting/#more">Read More</a>
+          </p>
+        
+      
+    </div>
+    <footer class="article-footer">
+      <a data-url="http://qefee.com/2014/03/16/gobyexample_sorting/" data-id="cjgt1z14i008nsxc9kz9q8rfk" class="article-share-link">Share</a>
+      
+        <a href="http://qefee.com/2014/03/16/gobyexample_sorting/#disqus_thread" class="article-comment-link">Comments</a>
+      
+      
+  <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/gobyexample/">gobyexample</a></li></ul>
+
+    </footer>
+  </div>
+  
+</article>
+
+
+  
+    <article id="post-gobyexample_stateful_goroutines" class="article article-type-post" itemscope itemprop="blogPost">
+  <div class="article-meta">
+    <a href="/2014/03/16/gobyexample_stateful_goroutines/" class="article-date">
+  <time datetime="2014-03-16T13:19:36.000Z" itemprop="datePublished">2014-03-16</time>
+</a>
+    
+  <div class="article-category">
+    <a class="article-category-link" href="/categories/go/">go</a>
+  </div>
+
+  </div>
+  <div class="article-inner">
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2014/03/16/gobyexample_stateful_goroutines/">gobyexample_stateful_goroutines</a>
+    </h1>
+  
+
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <!--head-->
+<p>========</p>
+<p><strong>参考网站</strong></p>
+<ul>
+<li><a href="https://gobyexample.com/" title="gobyexample">gobyexample</a></li>
+<li><a href="http://bbs.csdn.net/topics/390557446" title="go语言简单示例">go语言简单示例(gobyexample翻译)</a></li>
+<li><a href="http://qefee.com/tags/gobyexample/" title="启飞">启飞(gobyexample源码注释版)</a></li>
+</ul>
+<p>========</p>
+<p><strong>go 有状态的goroutine</strong></p>
+        
+          <p class="article-more-link">
+            <a href="/2014/03/16/gobyexample_stateful_goroutines/#more">Read More</a>
+          </p>
+        
+      
+    </div>
+    <footer class="article-footer">
+      <a data-url="http://qefee.com/2014/03/16/gobyexample_stateful_goroutines/" data-id="cjgt1z14n008usxc9qo1jajbp" class="article-share-link">Share</a>
+      
+        <a href="http://qefee.com/2014/03/16/gobyexample_stateful_goroutines/#disqus_thread" class="article-comment-link">Comments</a>
+      
+      
+  <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/gobyexample/">gobyexample</a></li></ul>
+
+    </footer>
+  </div>
+  
+</article>
+
+
+  
+    <article id="post-android画经过多点的曲线" class="article article-type-post" itemscope itemprop="blogPost">
+  <div class="article-meta">
+    <a href="/2014/03/15/android画经过多点的曲线/" class="article-date">
+  <time datetime="2014-03-15T13:34:05.000Z" itemprop="datePublished">2014-03-15</time>
+</a>
+    
+  <div class="article-category">
+    <a class="article-category-link" href="/categories/android/">android</a>
+  </div>
+
+  </div>
+  <div class="article-inner">
+    
+<div class="article-gallery">
+  <div class="article-gallery-photos">
+    
+      <a class="article-gallery-img fancybox" href="http://qefee.qiniudn.com/20140315_android%E7%94%BB%E7%BB%8F%E8%BF%87%E5%A4%9A%E7%82%B9%E7%9A%84%E6%9B%B2%E7%BA%BF.png" rel="gallery_cjgt1z11u003vsxc911f8ptry">
+        <img src="http://qefee.qiniudn.com/20140315_android%E7%94%BB%E7%BB%8F%E8%BF%87%E5%A4%9A%E7%82%B9%E7%9A%84%E6%9B%B2%E7%BA%BF.png" itemprop="image">
+      </a>
+    
+  </div>
+</div>
+
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2014/03/15/android画经过多点的曲线/">android画经过多点的曲线</a>
+    </h1>
+  
+
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <!--head-->
+<p><strong>参考链接</strong><br><strong>refer</strong></p>
+<p><a href="http://www.cse.unsw.edu.au/~lambert/splines/" title="Spline Curves">“Spline Curves”</a></p>
+<p>android自带的画曲线方法是不经过控制点的,而有时候又有这样的需要,<br>网上找了很多资料,是用三次函数实现的.</p>
+<p>步骤是大概这样的</p>
+<ol>
+<li>获取经过多点的函数曲线</li>
+<li>在函数曲线上平均获取一些点,画短直线</li>
+</ol>
+<p>具体实现不清楚,一句话</p>
+<p>I do not know why, but it works.</p>
+<p><strong>代码如下</strong></p>
+        
+          <p class="article-more-link">
+            <a href="/2014/03/15/android画经过多点的曲线/#more">Read More</a>
+          </p>
+        
+      
+    </div>
+    <footer class="article-footer">
+      <a data-url="http://qefee.com/2014/03/15/android画经过多点的曲线/" data-id="cjgt1z11u003vsxc911f8ptry" class="article-share-link">Share</a>
+      
+        <a href="http://qefee.com/2014/03/15/android画经过多点的曲线/#disqus_thread" class="article-comment-link">Comments</a>
+      
+      
+  <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/android/">android</a></li></ul>
+
+    </footer>
+  </div>
+  
+</article>
+
+
+  
+    <article id="post-gobyexample_mutexes" class="article article-type-post" itemscope itemprop="blogPost">
+  <div class="article-meta">
+    <a href="/2014/03/15/gobyexample_mutexes/" class="article-date">
+  <time datetime="2014-03-15T13:18:45.000Z" itemprop="datePublished">2014-03-15</time>
+</a>
+    
+  <div class="article-category">
+    <a class="article-category-link" href="/categories/go/">go</a>
+  </div>
+
+  </div>
+  <div class="article-inner">
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2014/03/15/gobyexample_mutexes/">gobyexample_mutexes</a>
+    </h1>
+  
+
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <!--head-->
+<p>========</p>
+<p><strong>参考网站</strong></p>
+<ul>
+<li><a href="https://gobyexample.com/" title="gobyexample">gobyexample</a></li>
+<li><a href="http://bbs.csdn.net/topics/390557446" title="go语言简单示例">go语言简单示例(gobyexample翻译)</a></li>
+<li><a href="http://qefee.com/tags/gobyexample/" title="启飞">启飞(gobyexample源码注释版)</a></li>
+</ul>
+<p>========</p>
+<p><strong>go 互斥</strong></p>
+        
+          <p class="article-more-link">
+            <a href="/2014/03/15/gobyexample_mutexes/#more">Read More</a>
+          </p>
+        
+      
+    </div>
+    <footer class="article-footer">
+      <a data-url="http://qefee.com/2014/03/15/gobyexample_mutexes/" data-id="cjgt1z148007xsxc97arwpsko" class="article-share-link">Share</a>
+      
+        <a href="http://qefee.com/2014/03/15/gobyexample_mutexes/#disqus_thread" class="article-comment-link">Comments</a>
+      
+      
+  <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/gobyexample/">gobyexample</a></li></ul>
+
+    </footer>
+  </div>
+  
+</article>
+
+
+  
+    <article id="post-gobyexample_atomiccounters" class="article article-type-post" itemscope itemprop="blogPost">
+  <div class="article-meta">
+    <a href="/2014/03/15/gobyexample_atomiccounters/" class="article-date">
+  <time datetime="2014-03-15T13:01:03.000Z" itemprop="datePublished">2014-03-15</time>
+</a>
+    
+  <div class="article-category">
+    <a class="article-category-link" href="/categories/go/">go</a>
+  </div>
+
+  </div>
+  <div class="article-inner">
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2014/03/15/gobyexample_atomiccounters/">gobyexample_atomiccounters</a>
+    </h1>
+  
+
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <!--head-->
+<p>========</p>
+<p><strong>参考网站</strong></p>
+<ul>
+<li><a href="https://gobyexample.com/" title="gobyexample">gobyexample</a></li>
+<li><a href="http://bbs.csdn.net/topics/390557446" title="go语言简单示例">go语言简单示例(gobyexample翻译)</a></li>
+<li><a href="http://qefee.com/tags/gobyexample/" title="启飞">启飞(gobyexample源码注释版)</a></li>
+</ul>
+<p>========</p>
+<p><strong>go 原子计数器</strong></p>
+        
+          <p class="article-more-link">
+            <a href="/2014/03/15/gobyexample_atomiccounters/#more">Read More</a>
+          </p>
+        
+      
+    </div>
+    <footer class="article-footer">
+      <a data-url="http://qefee.com/2014/03/15/gobyexample_atomiccounters/" data-id="cjgt1z1360065sxc97124fsw3" class="article-share-link">Share</a>
+      
+        <a href="http://qefee.com/2014/03/15/gobyexample_atomiccounters/#disqus_thread" class="article-comment-link">Comments</a>
+      
+      
+  <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/gobyexample/">gobyexample</a></li></ul>
+
+    </footer>
+  </div>
+  
+</article>
+
+
+  
+    <article id="post-gobyexample_ratelimiting" class="article article-type-post" itemscope itemprop="blogPost">
+  <div class="article-meta">
+    <a href="/2014/03/14/gobyexample_ratelimiting/" class="article-date">
+  <time datetime="2014-03-14T15:48:29.000Z" itemprop="datePublished">2014-03-14</time>
+</a>
+    
+  <div class="article-category">
+    <a class="article-category-link" href="/categories/go/">go</a>
+  </div>
+
+  </div>
+  <div class="article-inner">
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2014/03/14/gobyexample_ratelimiting/">gobyexample_ratelimiting</a>
+    </h1>
+  
+
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <!--head-->
+<p>========</p>
+<p><strong>参考网站</strong></p>
+<ul>
+<li><a href="https://gobyexample.com/" title="gobyexample">gobyexample</a></li>
+<li><a href="http://bbs.csdn.net/topics/390557446" title="go语言简单示例">go语言简单示例(gobyexample翻译)</a></li>
+<li><a href="http://qefee.com/tags/gobyexample/" title="启飞">启飞(gobyexample源码注释版)</a></li>
+</ul>
+<p>========</p>
+<p><strong>go 工作池</strong></p>
+        
+          <p class="article-more-link">
+            <a href="/2014/03/14/gobyexample_ratelimiting/#more">Read More</a>
+          </p>
+        
+      
+    </div>
+    <footer class="article-footer">
+      <a data-url="http://qefee.com/2014/03/14/gobyexample_ratelimiting/" data-id="cjgt1z14e008bsxc98jppy95v" class="article-share-link">Share</a>
+      
+        <a href="http://qefee.com/2014/03/14/gobyexample_ratelimiting/#disqus_thread" class="article-comment-link">Comments</a>
+      
+      
+  <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/gobyexample/">gobyexample</a></li></ul>
+
+    </footer>
+  </div>
+  
+</article>
+
+
+  
+    <article id="post-gobyexample_workerpools" class="article article-type-post" itemscope itemprop="blogPost">
+  <div class="article-meta">
+    <a href="/2014/03/14/gobyexample_workerpools/" class="article-date">
+  <time datetime="2014-03-14T15:12:56.000Z" itemprop="datePublished">2014-03-14</time>
+</a>
+    
+  <div class="article-category">
+    <a class="article-category-link" href="/categories/go/">go</a>
+  </div>
+
+  </div>
+  <div class="article-inner">
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2014/03/14/gobyexample_workerpools/">gobyexample_workerpools</a>
+    </h1>
+  
+
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <!--head-->
+<p>========</p>
+<p><strong>参考网站</strong></p>
+<ul>
+<li><a href="https://gobyexample.com/" title="gobyexample">gobyexample</a></li>
+<li><a href="http://bbs.csdn.net/topics/390557446" title="go语言简单示例">go语言简单示例(gobyexample翻译)</a></li>
+<li><a href="http://qefee.com/tags/gobyexample/" title="启飞">启飞(gobyexample源码注释版)</a></li>
+</ul>
+<p>========</p>
+<p><strong>go 流量限制</strong></p>
+        
+          <p class="article-more-link">
+            <a href="/2014/03/14/gobyexample_workerpools/#more">Read More</a>
+          </p>
+        
+      
+    </div>
+    <footer class="article-footer">
+      <a data-url="http://qefee.com/2014/03/14/gobyexample_workerpools/" data-id="cjgt1z14v009msxc9pfajib02" class="article-share-link">Share</a>
+      
+        <a href="http://qefee.com/2014/03/14/gobyexample_workerpools/#disqus_thread" class="article-comment-link">Comments</a>
+      
+      
+  <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/gobyexample/">gobyexample</a></li></ul>
+
+    </footer>
+  </div>
+  
+</article>
+
+
+  
+    <article id="post-gobyexample_tickers" class="article article-type-post" itemscope itemprop="blogPost">
+  <div class="article-meta">
+    <a href="/2014/03/13/gobyexample_tickers/" class="article-date">
+  <time datetime="2014-03-13T12:03:54.000Z" itemprop="datePublished">2014-03-13</time>
+</a>
+    
+  <div class="article-category">
+    <a class="article-category-link" href="/categories/go/">go</a>
+  </div>
+
+  </div>
+  <div class="article-inner">
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2014/03/13/gobyexample_tickers/">gobyexample_tickers</a>
+    </h1>
+  
+
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <!--head-->
+<p>========</p>
+<p><strong>参考网站</strong></p>
+<ul>
+<li><a href="https://gobyexample.com/" title="gobyexample">gobyexample</a></li>
+<li><a href="http://bbs.csdn.net/topics/390557446" title="go语言简单示例">go语言简单示例(gobyexample翻译)</a></li>
+<li><a href="http://qefee.com/tags/gobyexample/" title="启飞">启飞(gobyexample源码注释版)</a></li>
+</ul>
+<p>========</p>
+<p><strong>go tickers</strong></p>
+        
+          <p class="article-more-link">
+            <a href="/2014/03/13/gobyexample_tickers/#more">Read More</a>
+          </p>
+        
+      
+    </div>
+    <footer class="article-footer">
+      <a data-url="http://qefee.com/2014/03/13/gobyexample_tickers/" data-id="cjgt1z14p0091sxc9jdqgrhaj" class="article-share-link">Share</a>
+      
+        <a href="http://qefee.com/2014/03/13/gobyexample_tickers/#disqus_thread" class="article-comment-link">Comments</a>
+      
+      
+  <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/gobyexample/">gobyexample</a></li></ul>
+
+    </footer>
+  </div>
+  
+</article>
+
+
+  
+    <article id="post-gobyexample_timers" class="article article-type-post" itemscope itemprop="blogPost">
+  <div class="article-meta">
+    <a href="/2014/03/13/gobyexample_timers/" class="article-date">
+  <time datetime="2014-03-13T11:53:19.000Z" itemprop="datePublished">2014-03-13</time>
+</a>
+    
+  <div class="article-category">
+    <a class="article-category-link" href="/categories/go/">go</a>
+  </div>
+
+  </div>
+  <div class="article-inner">
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2014/03/13/gobyexample_timers/">gobyexample_timers</a>
+    </h1>
+  
+
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <!--head-->
+<p>========</p>
+<p><strong>参考网站</strong></p>
+<ul>
+<li><a href="https://gobyexample.com/" title="gobyexample">gobyexample</a></li>
+<li><a href="http://bbs.csdn.net/topics/390557446" title="go语言简单示例">go语言简单示例(gobyexample翻译)</a></li>
+<li><a href="http://qefee.com/tags/gobyexample/" title="启飞">启飞(gobyexample源码注释版)</a></li>
+</ul>
+<p>========</p>
+<p><strong>go timers</strong></p>
+        
+          <p class="article-more-link">
+            <a href="/2014/03/13/gobyexample_timers/#more">Read More</a>
+          </p>
+        
+      
+    </div>
+    <footer class="article-footer">
+      <a data-url="http://qefee.com/2014/03/13/gobyexample_timers/" data-id="cjgt1z14r0098sxc993y1hty4" class="article-share-link">Share</a>
+      
+        <a href="http://qefee.com/2014/03/13/gobyexample_timers/#disqus_thread" class="article-comment-link">Comments</a>
+      
+      
+  <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/gobyexample/">gobyexample</a></li></ul>
+
+    </footer>
+  </div>
+  
+</article>
+
+
+  
+    <article id="post-gobyexample_range_over_channels" class="article article-type-post" itemscope itemprop="blogPost">
+  <div class="article-meta">
+    <a href="/2014/03/13/gobyexample_range_over_channels/" class="article-date">
+  <time datetime="2014-03-13T11:45:11.000Z" itemprop="datePublished">2014-03-13</time>
+</a>
+    
+  <div class="article-category">
+    <a class="article-category-link" href="/categories/go/">go</a>
+  </div>
+
+  </div>
+  <div class="article-inner">
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2014/03/13/gobyexample_range_over_channels/">gobyexample_range_over_channels</a>
+    </h1>
+  
+
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <!--head-->
+<p>========</p>
+<p><strong>参考网站</strong></p>
+<ul>
+<li><a href="https://gobyexample.com/" title="gobyexample">gobyexample</a></li>
+<li><a href="http://bbs.csdn.net/topics/390557446" title="go语言简单示例">go语言简单示例(gobyexample翻译)</a></li>
+<li><a href="http://qefee.com/tags/gobyexample/" title="启飞">启飞(gobyexample源码注释版)</a></li>
+</ul>
+<p>========</p>
+<p><strong>go 遍历管道</strong></p>
+        
+          <p class="article-more-link">
+            <a href="/2014/03/13/gobyexample_range_over_channels/#more">Read More</a>
+          </p>
+        
+      
+    </div>
+    <footer class="article-footer">
+      <a data-url="http://qefee.com/2014/03/13/gobyexample_range_over_channels/" data-id="cjgt1z14d0089sxc988bxgtbt" class="article-share-link">Share</a>
+      
+        <a href="http://qefee.com/2014/03/13/gobyexample_range_over_channels/#disqus_thread" class="article-comment-link">Comments</a>
+      
+      
+  <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/gobyexample/">gobyexample</a></li></ul>
+
+    </footer>
+  </div>
+  
+</article>
+
+
+  
+    <article id="post-gobyexample_closing_channels" class="article article-type-post" itemscope itemprop="blogPost">
+  <div class="article-meta">
+    <a href="/2014/03/12/gobyexample_closing_channels/" class="article-date">
+  <time datetime="2014-03-12T13:40:32.000Z" itemprop="datePublished">2014-03-12</time>
+</a>
+    
+  <div class="article-category">
+    <a class="article-category-link" href="/categories/go/">go</a>
+  </div>
+
+  </div>
+  <div class="article-inner">
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2014/03/12/gobyexample_closing_channels/">gobyexample_closing_channels</a>
+    </h1>
+  
+
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <!--head-->
+<p>========</p>
+<p><strong>参考网站</strong></p>
+<ul>
+<li><a href="https://gobyexample.com/" title="gobyexample">gobyexample</a></li>
+<li><a href="http://bbs.csdn.net/topics/390557446" title="go语言简单示例">go语言简单示例(gobyexample翻译)</a></li>
+<li><a href="http://qefee.com/tags/gobyexample/" title="启飞">启飞(gobyexample源码注释版)</a></li>
+</ul>
+<p>========</p>
+<p><strong>go 关闭管道</strong></p>
+        
+          <p class="article-more-link">
+            <a href="/2014/03/12/gobyexample_closing_channels/#more">Read More</a>
+          </p>
+        
+      
+    </div>
+    <footer class="article-footer">
+      <a data-url="http://qefee.com/2014/03/12/gobyexample_closing_channels/" data-id="cjgt1z13j006vsxc9jz0fuat7" class="article-share-link">Share</a>
+      
+        <a href="http://qefee.com/2014/03/12/gobyexample_closing_channels/#disqus_thread" class="article-comment-link">Comments</a>
+      
+      
+  <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/gobyexample/">gobyexample</a></li></ul>
+
+    </footer>
+  </div>
+  
+</article>
+
+
+  
+    <article id="post-gobyexample_non_blocking_channel_operations" class="article article-type-post" itemscope itemprop="blogPost">
+  <div class="article-meta">
+    <a href="/2014/03/12/gobyexample_non_blocking_channel_operations/" class="article-date">
+  <time datetime="2014-03-12T12:35:41.000Z" itemprop="datePublished">2014-03-12</time>
+</a>
+    
+  <div class="article-category">
+    <a class="article-category-link" href="/categories/go/">go</a>
+  </div>
+
+  </div>
+  <div class="article-inner">
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2014/03/12/gobyexample_non_blocking_channel_operations/">gobyexample_non_blocking_channel_operations</a>
+    </h1>
+  
+
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <!--head-->
+<p>========</p>
+<p><strong>参考网站</strong></p>
+<ul>
+<li><a href="https://gobyexample.com/" title="gobyexample">gobyexample</a></li>
+<li><a href="http://bbs.csdn.net/topics/390557446" title="go语言简单示例">go语言简单示例(gobyexample翻译)</a></li>
+<li><a href="http://qefee.com/tags/gobyexample/" title="启飞">启飞(gobyexample源码注释版)</a></li>
+</ul>
+<p>========</p>
+<p><strong>go 非阻塞管道操作</strong></p>
+        
+          <p class="article-more-link">
+            <a href="/2014/03/12/gobyexample_non_blocking_channel_operations/#more">Read More</a>
+          </p>
+        
+      
+    </div>
+    <footer class="article-footer">
+      <a data-url="http://qefee.com/2014/03/12/gobyexample_non_blocking_channel_operations/" data-id="cjgt1z1490080sxc9tq843r6q" class="article-share-link">Share</a>
+      
+        <a href="http://qefee.com/2014/03/12/gobyexample_non_blocking_channel_operations/#disqus_thread" class="article-comment-link">Comments</a>
+      
+      
+  <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/gobyexample/">gobyexample</a></li></ul>
+
+    </footer>
+  </div>
+  
+</article>
+
+
+  
+    <article id="post-gobyexample_timeouts" class="article article-type-post" itemscope itemprop="blogPost">
+  <div class="article-meta">
+    <a href="/2014/03/11/gobyexample_timeouts/" class="article-date">
+  <time datetime="2014-03-11T15:24:19.000Z" itemprop="datePublished">2014-03-11</time>
+</a>
+    
+  <div class="article-category">
+    <a class="article-category-link" href="/categories/go/">go</a>
+  </div>
+
+  </div>
+  <div class="article-inner">
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2014/03/11/gobyexample_timeouts/">gobyexample_timeouts</a>
+    </h1>
+  
+
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <!--head-->
+<p>========</p>
+<p><strong>参考网站</strong></p>
+<ul>
+<li><a href="https://gobyexample.com/" title="gobyexample">gobyexample</a></li>
+<li><a href="http://bbs.csdn.net/topics/390557446" title="go语言简单示例">go语言简单示例(gobyexample翻译)</a></li>
+<li><a href="http://qefee.com/tags/gobyexample/" title="启飞">启飞(gobyexample源码注释版)</a></li>
+</ul>
+<p>========</p>
+<p><strong>go select</strong></p>
+        
+          <p class="article-more-link">
+            <a href="/2014/03/11/gobyexample_timeouts/#more">Read More</a>
+          </p>
+        
+      
+    </div>
+    <footer class="article-footer">
+      <a data-url="http://qefee.com/2014/03/11/gobyexample_timeouts/" data-id="cjgt1z14q0095sxc9sbx17odf" class="article-share-link">Share</a>
+      
+        <a href="http://qefee.com/2014/03/11/gobyexample_timeouts/#disqus_thread" class="article-comment-link">Comments</a>
+      
+      
+  <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/gobyexample/">gobyexample</a></li></ul>
+
+    </footer>
+  </div>
+  
+</article>
+
+
+  
+    <article id="post-gobyexample_select" class="article article-type-post" itemscope itemprop="blogPost">
+  <div class="article-meta">
+    <a href="/2014/03/11/gobyexample_select/" class="article-date">
+  <time datetime="2014-03-11T15:16:19.000Z" itemprop="datePublished">2014-03-11</time>
+</a>
+    
+  <div class="article-category">
+    <a class="article-category-link" href="/categories/go/">go</a>
+  </div>
+
+  </div>
+  <div class="article-inner">
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2014/03/11/gobyexample_select/">gobyexample_select</a>
+    </h1>
+  
+
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <!--head-->
+<p>========</p>
+<p><strong>参考网站</strong></p>
+<ul>
+<li><a href="https://gobyexample.com/" title="gobyexample">gobyexample</a></li>
+<li><a href="http://bbs.csdn.net/topics/390557446" title="go语言简单示例">go语言简单示例(gobyexample翻译)</a></li>
+<li><a href="http://qefee.com/tags/gobyexample/" title="启飞">启飞(gobyexample源码注释版)</a></li>
+</ul>
+<p>========</p>
+<p><strong>go select</strong></p>
+        
+          <p class="article-more-link">
+            <a href="/2014/03/11/gobyexample_select/#more">Read More</a>
+          </p>
+        
+      
+    </div>
+    <footer class="article-footer">
+      <a data-url="http://qefee.com/2014/03/11/gobyexample_select/" data-id="cjgt1z14h008hsxc9u86pt2un" class="article-share-link">Share</a>
+      
+        <a href="http://qefee.com/2014/03/11/gobyexample_select/#disqus_thread" class="article-comment-link">Comments</a>
+      
+      
+  <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/gobyexample/">gobyexample</a></li></ul>
+
+    </footer>
+  </div>
+  
+</article>
+
+
+  
+    <article id="post-android自定义interpolator动画" class="article article-type-post" itemscope itemprop="blogPost">
+  <div class="article-meta">
+    <a href="/2014/03/11/android自定义interpolator动画/" class="article-date">
+  <time datetime="2014-03-11T15:10:16.000Z" itemprop="datePublished">2014-03-11</time>
+</a>
+    
+  <div class="article-category">
+    <a class="article-category-link" href="/categories/android/">android</a>
+  </div>
+
+  </div>
+  <div class="article-inner">
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2014/03/11/android自定义interpolator动画/">android自定义Interpolator动画</a>
+    </h1>
+  
+
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <!--head-->
+<p>android提供了很多的Tween animation补间动画。</p>
+<p>比如:</p>
+<ul>
+<li>LinearInterpolator</li>
+<li>AccelerateInterpolator</li>
+<li>CycleInterpolator</li>
+<li>…(很多不一一列举)</li>
+</ul>
+<p>可以查看以下官网地址</p>
+<ul>
+<li><a href="http://developer.android.com/reference/android/view/animation/Interpolator.html" title="Interpolator">Interpolator</a></li>
+<li><a href="http://developer.android.com/guide/topics/resources/animation-resource.html" title="animation-resource">animation-resource</a></li>
+</ul>
+<p>自定义Interpolator也很简单，实现Interpolator接口就行了。<br>用Animation.setInterpolator()设置自定义插入帧。</p>
+<p>下面附上例子,实现的是闪现动画。</p>
+        
+          <p class="article-more-link">
+            <a href="/2014/03/11/android自定义interpolator动画/#more">Read More</a>
+          </p>
+        
+      
+    </div>
+    <footer class="article-footer">
+      <a data-url="http://qefee.com/2014/03/11/android自定义interpolator动画/" data-id="cjgt1z12q0055sxc9v6jw8cyc" class="article-share-link">Share</a>
+      
+        <a href="http://qefee.com/2014/03/11/android自定义interpolator动画/#disqus_thread" class="article-comment-link">Comments</a>
+      
+      
+  <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/android/">android</a></li></ul>
+
+    </footer>
+  </div>
+  
+</article>
+
+
+  
+    <article id="post-gobyexample_channeldirections" class="article article-type-post" itemscope itemprop="blogPost">
+  <div class="article-meta">
+    <a href="/2014/03/10/gobyexample_channeldirections/" class="article-date">
+  <time datetime="2014-03-10T15:07:14.000Z" itemprop="datePublished">2014-03-10</time>
+</a>
+    
+  <div class="article-category">
+    <a class="article-category-link" href="/categories/go/">go</a>
+  </div>
+
+  </div>
+  <div class="article-inner">
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2014/03/10/gobyexample_channeldirections/">gobyexample_channeldirections</a>
+    </h1>
+  
+
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <!--head-->
+<p>========</p>
+<p><strong>参考网站</strong></p>
+<ul>
+<li><a href="https://gobyexample.com/" title="gobyexample">gobyexample</a></li>
+<li><a href="http://bbs.csdn.net/topics/390557446" title="go语言简单示例">go语言简单示例(gobyexample翻译)</a></li>
+<li><a href="http://qefee.com/tags/gobyexample/" title="启飞">启飞(gobyexample源码注释版)</a></li>
+</ul>
+<p>========</p>
+<p><strong>go 管道方向</strong></p>
+        
+          <p class="article-more-link">
+            <a href="/2014/03/10/gobyexample_channeldirections/#more">Read More</a>
+          </p>
+        
+      
+    </div>
+    <footer class="article-footer">
+      <a data-url="http://qefee.com/2014/03/10/gobyexample_channeldirections/" data-id="cjgt1z13c006hsxc9hs0lxw9g" class="article-share-link">Share</a>
+      
+        <a href="http://qefee.com/2014/03/10/gobyexample_channeldirections/#disqus_thread" class="article-comment-link">Comments</a>
+      
+      
+  <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/gobyexample/">gobyexample</a></li></ul>
+
+    </footer>
+  </div>
+  
+</article>
+
+
+  
+    <article id="post-android中imageview切换图片" class="article article-type-post" itemscope itemprop="blogPost">
+  <div class="article-meta">
+    <a href="/2014/03/10/android中imageview切换图片/" class="article-date">
+  <time datetime="2014-03-10T14:37:29.000Z" itemprop="datePublished">2014-03-10</time>
+</a>
+    
+  <div class="article-category">
+    <a class="article-category-link" href="/categories/android/">android</a>
+  </div>
+
+  </div>
+  <div class="article-inner">
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2014/03/10/android中imageview切换图片/">android中ImageView切换图片</a>
+    </h1>
+  
+
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <!--head-->
+<p>主要是ImageView的setImageBitmap和setImageDrawable方法。</p>
+<ul>
+<li>setImageBitmap使用外部图片</li>
+<li>setImageDrawable使用drawable资源</li>
+</ul>
+<p>参考文章<a href="http://blog.csdn.net/h3c4lenovo/article/details/7669455" title="切换imageView的几种办法">切换imageView的几种办法</a></p>
+<p><strong>代码如下</strong></p>
+        
+          <p class="article-more-link">
+            <a href="/2014/03/10/android中imageview切换图片/#more">Read More</a>
+          </p>
+        
+      
+    </div>
+    <footer class="article-footer">
+      <a data-url="http://qefee.com/2014/03/10/android中imageview切换图片/" data-id="cjgt1z115002wsxc9omq11m13" class="article-share-link">Share</a>
+      
+        <a href="http://qefee.com/2014/03/10/android中imageview切换图片/#disqus_thread" class="article-comment-link">Comments</a>
+      
+      
+  <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/android/">android</a></li></ul>
+
+    </footer>
+  </div>
+  
+</article>
+
+
+  
+  
+    <nav id="page-nav">
+      <a class="extend prev" rel="prev" href="/page/2/">&laquo; Prev</a><a class="page-number" href="/">1</a><a class="page-number" href="/page/2/">2</a><span class="page-number current">3</span><a class="page-number" href="/page/4/">4</a><a class="page-number" href="/page/5/">5</a><a class="extend next" rel="next" href="/page/4/">Next &raquo;</a>
+    </nav>
+  
+</section>
+        
+          <aside id="sidebar">
+  
+    
+  <div class="widget-wrap">
+    <h3 class="widget-title">Categories</h3>
+    <div class="widget">
+      <ul class="category-list"><li class="category-list-item"><a class="category-list-link" href="/categories/android/">android</a><span class="category-list-count">29</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/cordova/">cordova</a><span class="category-list-count">2</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/go/">go</a><span class="category-list-count">46</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/html/">html</a><span class="category-list-count">1</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/interesting/">interesting</a><span class="category-list-count">2</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/ios/">ios</a><span class="category-list-count">26</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/java/">java</a><span class="category-list-count">2</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/javascript/">javascript</a><span class="category-list-count">1</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/jquerymobile/">jquerymobile</a><span class="category-list-count">1</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/mac/">mac</a><span class="category-list-count">1</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/nodejs/">nodejs</a><span class="category-list-count">2</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/qefee/">qefee</a><span class="category-list-count">12</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/swift/">swift</a><span class="category-list-count">2</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/tools/">tools</a><span class="category-list-count">4</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/typescript/">typescript</a><span class="category-list-count">1</span></li></ul>
+    </div>
+  </div>
+
+  
+    
+  <div class="widget-wrap">
+    <h3 class="widget-title">Tags</h3>
+    <div class="widget">
+      <ul class="tag-list"><li class="tag-list-item"><a class="tag-list-link" href="/tags/BuildConfig/">BuildConfig</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/CoordinatorLayout/">CoordinatorLayout</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/SegmentedControl/">SegmentedControl</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Snackbar/">Snackbar</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/aidl/">aidl</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/android/">android</a><span class="tag-list-count">13</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/animate/">animate</a><span class="tag-list-count">2</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/banner/">banner</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/cordova/">cordova</a><span class="tag-list-count">2</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/flexbox/">flexbox</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/fsnotify/">fsnotify</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/go/">go</a><span class="tag-list-count">6</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/gobyexample/">gobyexample</a><span class="tag-list-count">39</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/guava/">guava</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/hexo/">hexo</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/idea/">idea</a><span class="tag-list-count">2</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/interesting/">interesting</a><span class="tag-list-count">2</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/java/">java</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/javascript/">javascript</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/jquerymobile/">jquerymobile</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/mac/">mac</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/nodejs/">nodejs</a><span class="tag-list-count">2</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/permission/">permission</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/proxy/">proxy</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/qefee/">qefee</a><span class="tag-list-count">11</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/record/">record</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/room/">room</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/screenrecord/">screenrecord</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/sensor/">sensor</a><span class="tag-list-count">2</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/swift/">swift</a><span class="tag-list-count">3</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/toolbar/">toolbar</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/tools/">tools</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/typescript/">typescript</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/viewpager/">viewpager</a><span class="tag-list-count">3</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/公益/">公益</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/动画/">动画</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/设计模式/">设计模式</a><span class="tag-list-count">22</span></li></ul>
+    </div>
+  </div>
+
+  
+    
+  <div class="widget-wrap">
+    <h3 class="widget-title">Tag Cloud</h3>
+    <div class="widget tagcloud">
+      <a href="/tags/BuildConfig/" style="font-size: 10px;">BuildConfig</a> <a href="/tags/CoordinatorLayout/" style="font-size: 10px;">CoordinatorLayout</a> <a href="/tags/SegmentedControl/" style="font-size: 10px;">SegmentedControl</a> <a href="/tags/Snackbar/" style="font-size: 10px;">Snackbar</a> <a href="/tags/aidl/" style="font-size: 10px;">aidl</a> <a href="/tags/android/" style="font-size: 17.14px;">android</a> <a href="/tags/animate/" style="font-size: 11.43px;">animate</a> <a href="/tags/banner/" style="font-size: 10px;">banner</a> <a href="/tags/cordova/" style="font-size: 11.43px;">cordova</a> <a href="/tags/flexbox/" style="font-size: 10px;">flexbox</a> <a href="/tags/fsnotify/" style="font-size: 10px;">fsnotify</a> <a href="/tags/go/" style="font-size: 14.29px;">go</a> <a href="/tags/gobyexample/" style="font-size: 20px;">gobyexample</a> <a href="/tags/guava/" style="font-size: 10px;">guava</a> <a href="/tags/hexo/" style="font-size: 10px;">hexo</a> <a href="/tags/idea/" style="font-size: 11.43px;">idea</a> <a href="/tags/interesting/" style="font-size: 11.43px;">interesting</a> <a href="/tags/java/" style="font-size: 10px;">java</a> <a href="/tags/javascript/" style="font-size: 10px;">javascript</a> <a href="/tags/jquerymobile/" style="font-size: 10px;">jquerymobile</a> <a href="/tags/mac/" style="font-size: 10px;">mac</a> <a href="/tags/nodejs/" style="font-size: 11.43px;">nodejs</a> <a href="/tags/permission/" style="font-size: 10px;">permission</a> <a href="/tags/proxy/" style="font-size: 10px;">proxy</a> <a href="/tags/qefee/" style="font-size: 15.71px;">qefee</a> <a href="/tags/record/" style="font-size: 10px;">record</a> <a href="/tags/room/" style="font-size: 10px;">room</a> <a href="/tags/screenrecord/" style="font-size: 10px;">screenrecord</a> <a href="/tags/sensor/" style="font-size: 11.43px;">sensor</a> <a href="/tags/swift/" style="font-size: 12.86px;">swift</a> <a href="/tags/toolbar/" style="font-size: 10px;">toolbar</a> <a href="/tags/tools/" style="font-size: 10px;">tools</a> <a href="/tags/typescript/" style="font-size: 10px;">typescript</a> <a href="/tags/viewpager/" style="font-size: 12.86px;">viewpager</a> <a href="/tags/公益/" style="font-size: 10px;">公益</a> <a href="/tags/动画/" style="font-size: 10px;">动画</a> <a href="/tags/设计模式/" style="font-size: 18.57px;">设计模式</a>
+    </div>
+  </div>
+
+  
+    
+  <div class="widget-wrap">
+    <h3 class="widget-title">Archives</h3>
+    <div class="widget">
+      <ul class="archive-list"><li class="archive-list-item"><a class="archive-list-link" href="/archives/2018/05/">May 2018</a><span class="archive-list-count">4</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2016/12/">December 2016</a><span class="archive-list-count">2</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2016/11/">November 2016</a><span class="archive-list-count">3</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2016/09/">September 2016</a><span class="archive-list-count">2</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2016/08/">August 2016</a><span class="archive-list-count">2</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2016/07/">July 2016</a><span class="archive-list-count">7</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2016/06/">June 2016</a><span class="archive-list-count">8</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2016/05/">May 2016</a><span class="archive-list-count">26</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2016/04/">April 2016</a><span class="archive-list-count">4</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2016/03/">March 2016</a><span class="archive-list-count">2</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2016/02/">February 2016</a><span class="archive-list-count">4</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2016/01/">January 2016</a><span class="archive-list-count">7</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2015/12/">December 2015</a><span class="archive-list-count">1</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2014/03/">March 2014</a><span class="archive-list-count">45</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2014/02/">February 2014</a><span class="archive-list-count">16</span></li></ul>
+    </div>
+  </div>
+
+  
+    
+  <div class="widget-wrap">
+    <h3 class="widget-title">Recents</h3>
+    <div class="widget">
+      <ul>
+        
+          <li>
+            <a href="/2018/05/05/20180505-android传感器种类及获取/">20180505_android传感器种类及获取</a>
+          </li>
+        
+          <li>
+            <a href="/2018/05/04/20180504-android传感器入门之光线传感器/">20180504_android传感器入门之光线传感器</a>
+          </li>
+        
+          <li>
+            <a href="/2018/05/03/20180503-android简单使用AIDL实现IPC进程间通信/">20180503_android简单使用AIDL实现IPC进程间通信</a>
+          </li>
+        
+          <li>
+            <a href="/2018/05/02/20180502-从零开始的android持久库room其一/">20180502_从零开始的android持久库room其一</a>
+          </li>
+        
+          <li>
+            <a href="/2016/12/07/AwesomeAndroidTips/">AwesomeAndroidTips</a>
+          </li>
+        
+      </ul>
+    </div>
+  </div>
+
+  
+</aside>
+        
+      </div>
+      <footer id="footer">
+  
+  <div class="outer">
+    <div id="footer-info" class="inner">
+      &copy; 2018 qefee<br>
+      Powered by <a href="http://hexo.io/" target="_blank">Hexo</a>
+    </div>
+  </div>
+</footer>
+    </div>
+    <nav id="mobile-nav">
+  
+    <a href="/" class="mobile-nav-link">Home</a>
+  
+    <a href="/archives" class="mobile-nav-link">Archives</a>
+  
+    <a href="/about" class="mobile-nav-link">About</a>
+  
+</nav>
+    
+<script>
+  var disqus_shortname = 'qefee';
+  
+  (function(){
+    var dsq = document.createElement('script');
+    dsq.type = 'text/javascript';
+    dsq.async = true;
+    dsq.src = '//' + disqus_shortname + '.disqus.com/count.js';
+    (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
+  })();
+</script>
+
+
+<script src="//ajax.googleapis.com/ajax/libs/jquery/2.0.3/jquery.min.js"></script>
+
+
+  <link rel="stylesheet" href="/fancybox/jquery.fancybox.css">
+  <script src="/fancybox/jquery.fancybox.pack.js"></script>
+
+
+<script src="/js/script.js"></script>
+
+  </div>
+  
+  <!-- add by tongjin -->
+  <a href="https://github.com/aotian16">
+  <img style="position: absolute; top: 300px; right: 0; border: 0; z-index: 100;" src="https://camo.githubusercontent.com/365986a132ccd6a44c23a9169022c0b5c890c387/68747470733a2f2f73332e616d617a6f6e6177732e636f6d2f6769746875622f726962626f6e732f666f726b6d655f72696768745f7265645f6161303030302e706e67" alt="Fork me on GitHub" data-canonical-src="https://s3.amazonaws.com/github/ribbons/forkme_right_red_aa0000.png">
+  </a>
+  
+</body>
+</html>
